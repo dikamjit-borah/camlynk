@@ -9,7 +9,7 @@ function StatItem({ value, suffix, label }: { value: number; suffix: string; lab
   return (
     <div
       ref={ref as React.RefObject<HTMLDivElement>}
-      className="flex-1 px-6 py-5 border-r border-navy/10 last:border-r-0 min-w-0"
+      className="flex-1 px-6 py-5 border-r border-navy/20 last:border-r-0 min-w-0"
     >
       <div
         className="font-display font-extrabold text-navy leading-none"
@@ -24,7 +24,7 @@ function StatItem({ value, suffix, label }: { value: number; suffix: string; lab
 
 export default function Hero() {
   return (
-    <section className="bg-cream min-h-[92vh] flex flex-col relative overflow-hidden">
+    <section className="bg-white min-h-[92vh] flex flex-col relative overflow-hidden border-b border-navy/10">
 
       {/* Camera lens — purely decorative, desktop only */}
       <div
@@ -53,7 +53,7 @@ export default function Hero() {
           className="absolute w-[460px] h-[460px] rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
           style={{
             border: '2px solid transparent',
-            background: 'linear-gradient(#FEFDDF, #FEFDDF) padding-box, linear-gradient(135deg, #FFC81E 0%, transparent 50%) border-box',
+            background: 'linear-gradient(#ffffff, #ffffff) padding-box, linear-gradient(135deg, #FFC81E 0%, transparent 50%) border-box',
           }}
         />
       </div>
@@ -94,7 +94,7 @@ export default function Hero() {
       </div>
 
       {/* Stats strip — integrated into hero */}
-      <div className="border-t border-navy/10 flex overflow-x-auto">
+      <div className="border-t-2 border-navy flex overflow-x-auto">
         {STATS.map((stat) => (
           <StatItem key={stat.label} {...stat} />
         ))}

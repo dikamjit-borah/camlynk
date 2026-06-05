@@ -6,7 +6,7 @@ const STEPS = [
 
 export default function HowItWorks() {
   return (
-    <section className="bg-cream overflow-hidden">
+    <section className="bg-white border-t border-navy/10 overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 md:px-10 py-24">
         <p className="text-[9px] font-extrabold tracking-[5px] uppercase text-orange mb-3">The Process</p>
         <h2
@@ -27,7 +27,7 @@ export default function HowItWorks() {
           {STEPS.map(({ step, title, body }) => (
             <div key={step} className="pt-0 pb-10 md:pb-0 md:pr-12 last:pr-0">
               {/* Step bubble */}
-              <div className="w-[4.5rem] h-[4.5rem] rounded-full border-2 border-orange bg-cream flex items-center justify-center mb-6 relative z-10">
+              <div className="w-[4.5rem] h-[4.5rem] border-2 border-orange bg-white flex items-center justify-center mb-6 relative z-10">
                 <span className="font-display font-extrabold text-orange text-xl">{step}</span>
               </div>
               <h3 className="font-display font-bold text-navy mb-3 text-base">{title}</h3>

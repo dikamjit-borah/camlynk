@@ -7,7 +7,7 @@
   --color-steel-blue: #73A5CA;
   --color-navy: #1B3A5C;
   --font-sans: var(--font-plus-jakarta-sans), sans-serif;
-  --font-display: var(--font-syne), sans-serif;
+  --font-display: var(--font-unbounded), sans-serif;
 }
 
 @layer base {
@@ -15,7 +15,7 @@
     scroll-behavior: smooth;
   }
   body {
-    background-color: var(--color-cream);
+    background-color: #ffffff;
     color: var(--color-navy);
     font-family: var(--font-sans);
   }

@@ -37,7 +37,7 @@ export default function ContactSection() {
   const inputClass = 'w-full border border-navy/20 rounded-lg px-4 py-3 text-navy text-sm bg-white focus:outline-none focus:border-orange transition-colors'
 
   return (
-    <SectionWrapper id="contact" className="bg-cream py-20 px-6">
+    <SectionWrapper id="contact" className="bg-white border-t border-navy/10 py-20 px-6">
       <div className="max-w-6xl mx-auto">
         <Eyebrow>Get in Touch</Eyebrow>
         <h2 className="text-4xl md:text-5xl font-black text-navy mb-12">Book Your Free Survey</h2>

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Plus_Jakarta_Sans, Syne } from 'next/font/google'
+import { Plus_Jakarta_Sans, Unbounded } from 'next/font/google'
 import './globals.css'
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -8,10 +8,10 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   variable: '--font-plus-jakarta-sans',
 })
 
-const syne = Syne({
+const unbounded = Unbounded({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800'],
-  variable: '--font-syne',
+  weight: ['700', '800', '900'],
+  variable: '--font-unbounded',
 })
 
 export const metadata: Metadata = {
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${plusJakartaSans.variable} ${syne.variable}`}>
+    <html lang="en" className={`${plusJakartaSans.variable} ${unbounded.variable}`}>
       <body>{children}</body>
     </html>
   )

@@ -37,7 +37,7 @@ export default function ServicesOverview() {
           <a
             key={title}
             href={href}
-            className="group flex items-center gap-6 md:gap-10 py-7 border-t border-navy/10 hover:bg-cream/60 transition-colors duration-200 -mx-6 md:-mx-10 px-6 md:px-10"
+            className="group flex items-center gap-6 md:gap-10 py-7 border-t border-navy/10 hover:bg-navy/[0.02] transition-colors duration-200 -mx-6 md:-mx-10 px-6 md:px-10"
           >
             <span
               className="font-display font-extrabold text-navy/10 group-hover:text-orange/20 transition-colors duration-300 shrink-0 leading-none select-none"

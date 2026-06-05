@@ -9,7 +9,7 @@ const FEATURES = [
 
 export default function Commercial() {
   return (
-    <section id="commercial" className="bg-cream">
+    <section id="commercial" className="bg-white border-t border-navy/10">
       <div className="max-w-6xl mx-auto px-6 md:px-10 py-24">
         <div className="grid md:grid-cols-[1fr_1.4fr] gap-16 md:gap-24 items-start">
 

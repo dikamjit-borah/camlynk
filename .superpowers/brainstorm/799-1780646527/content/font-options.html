@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Font Options — Brutalist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Big+Shoulders+Display:wght@700;800;900&family=Barlow+Condensed:wght@600;700;800&family=Unbounded:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #f0f0f0; font-family: system-ui, sans-serif; padding: 24px; }
+  h1 { font-size: 13px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #888; margin-bottom: 20px; }
+
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  .option {
+    background: #fff;
+    border: 3px solid transparent;
+    cursor: pointer;
+    transition: border-color 0.15s;
+    overflow: hidden;
+  }
+  .option:hover { border-color: #E87F24; }
+  .option.selected { border-color: #E87F24; }
+  .option.selected::after {
+    content: '✓ Selected';
+    display: block;
+    background: #E87F24;
+    color: white;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 6px;
+  }
+
+  .preview {
+    background: #ffffff;
+    padding: 32px 28px 24px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .tag {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #E87F24;
+    margin-bottom: 10px;
+    font-family: system-ui;
+  }
+  .headline { color: #1B3A5C; line-height: 0.88; margin-bottom: 16px; }
+  .sub { color: #1B3A5C; opacity: 0.45; font-size: 13px; line-height: 1.5; font-family: system-ui; margin-bottom: 16px; }
+  .btn {
+    display: inline-block;
+    background: #1B3A5C;
+    color: white;
+    padding: 10px 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: system-ui;
+  }
+
+  .info { padding: 14px 18px; background: #fafafa; }
+  .font-name { font-size: 13px; font-weight: 800; color: #1B3A5C; }
+  .font-desc { font-size: 11px; color: #888; margin-top: 3px; line-height: 1.4; }
+
+  /* Color note */
+  .color-note {
+    background: #1B3A5C;
+    color: white;
+    padding: 14px 18px;
+    font-size: 11px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+  .color-note strong { color: #E87F24; }
+</style>
+</head>
+<body>
+
+<div class="color-note">
+  <strong>Color note:</strong> All options shown with a cleaned palette — <strong>white backgrounds</strong> instead of the dirty cream. Orange stays as the single accent. Gold dropped to hairlines only. This is the fix for the "dirty" look.
+</div>
+
+<h1>Choose a display font</h1>
+
+<div class="grid">
+
+  <!-- Option A: Bebas Neue -->
+  <div class="option" onclick="select(this, 'bebas')">
+    <div class="preview">
+      <div class="tag">Guwahati's Trusted Partner</div>
+      <div class="headline" style="font-family:'Bebas Neue'; font-size: 72px; letter-spacing: 2px;">
+        PROTECT<br>EVERYTHING.
+      </div>
+      <div class="sub">CCTV, smart home and alarm systems for homes and businesses across Guwahati.</div>
+      <div class="btn" style="font-family:'Bebas Neue'; font-size:14px; letter-spacing:3px;">BOOK FREE SURVEY</div>
+    </div>
+    <div class="info">
+      <div class="font-name">A — Bebas Neue</div>
+      <div class="font-desc">Ultra-condensed all-caps. Maximum impact. The archetypal brutalist display font — raw, bold, uncompromising. Zero decoration.</div>
+    </div>
+  </div>
+
+  <!-- Option B: Big Shoulders Display -->
+  <div class="option" onclick="select(this, 'big-shoulders')">
+    <div class="preview">
+      <div class="tag">Guwahati's Trusted Partner</div>
+      <div class="headline" style="font-family:'Big Shoulders Display'; font-size: 72px; font-weight:900;">
+        Protect<br>Everything.
+      </div>
+      <div class="sub">CCTV, smart home and alarm systems for homes and businesses across Guwahati.</div>
+      <div class="btn">Book Free Survey</div>
+    </div>
+    <div class="info">
+      <div class="font-name">B — Big Shoulders Display</div>
+      <div class="font-desc">Ultra-bold architectural variable font. Strong and confident but allows mixed case — feels more refined than Bebas while keeping brutalist energy.</div>
+    </div>
+  </div>
+
+  <!-- Option C: Unbounded -->
+  <div class="option" onclick="select(this, 'unbounded')">
+    <div class="preview">
+      <div class="tag">Guwahati's Trusted Partner</div>
+      <div class="headline" style="font-family:'Unbounded'; font-size: 52px; font-weight:900; line-height: 0.92;">
+        Protect<br>Everything.
+      </div>
+      <div class="sub">CCTV, smart home and alarm systems for homes and businesses across Guwahati.</div>
+      <div class="btn">Book Free Survey</div>
+    </div>
+    <div class="info">
+      <div class="font-name">C — Unbounded</div>
+      <div class="font-desc">Squared geometric sans. Tech-forward brutalism — feels like precision engineering. Slightly smaller at the same size so headlines feel denser and more packed.</div>
+    </div>
+  </div>
+
+  <!-- Option D: Barlow Condensed -->
+  <div class="option" onclick="select(this, 'barlow')">
+    <div class="preview">
+      <div class="tag">Guwahati's Trusted Partner</div>
+      <div class="headline" style="font-family:'Barlow Condensed'; font-size: 80px; font-weight:800; letter-spacing:-1px;">
+        Protect<br>Everything.
+      </div>
+      <div class="sub">CCTV, smart home and alarm systems for homes and businesses across Guwahati.</div>
+      <div class="btn">Book Free Survey</div>
+    </div>
+    <div class="info">
+      <div class="font-name">D — Barlow Condensed</div>
+      <div class="font-desc">Clean condensed sans. Still very bold at heavy weights but more legible than Bebas. Brutalist but approachable — good for a local service business.</div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function select(el, val) {
+  document.querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+  if (window.__cc_select) window.__cc_select(val);
+}
+</script>
+</body>
+</html>
