@@ -6,7 +6,7 @@ export default function Testimonials() {
       {/* Header */}
       <div className="px-6 md:px-12 lg:px-16 pt-14 pb-8 border-b border-navy/10">
         <h2
-          className="font-display text-navy"
+          className="font-serif text-navy"
           style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.8rem)', letterSpacing: '-0.01em' }}
         >
           CLIENT STORIES
@@ -22,7 +22,7 @@ export default function Testimonials() {
           >
             {/* Index */}
             <div className="flex md:flex-col gap-4 md:gap-0 items-center md:items-start">
-              <span className="font-display text-navy/10 leading-none text-4xl select-none">
+              <span className="font-serif text-navy/10 leading-none text-4xl select-none">
                 0{i + 1}
               </span>
               {/* Stars */}
@@ -37,7 +37,7 @@ export default function Testimonials() {
             <div>
               {/* Large opening quote in Thernaly italic */}
               <p
-                className="font-complement italic text-navy/70 leading-relaxed mb-6"
+                className="font-sans italic text-navy/70 leading-relaxed mb-6"
                 style={{ fontSize: 'clamp(1rem, 2vw, 1.25rem)' }}
               >
                 &ldquo;{quote}&rdquo;
@@ -45,8 +45,8 @@ export default function Testimonials() {
               <div className="flex items-center gap-3">
                 <div className="h-px w-6 bg-orange" />
                 <div>
-                  <p className="font-display text-navy text-xs tracking-[2px]">{name.toUpperCase()}</p>
-                  <p className="font-complement italic text-navy/35 text-xs mt-0.5">{location}</p>
+                  <p className="font-serif text-navy text-xs tracking-[2px]">{name.toUpperCase()}</p>
+                  <p className="font-sans italic text-navy/35 text-xs mt-0.5">{location}</p>
                 </div>
               </div>
             </div>

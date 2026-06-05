@@ -11,14 +11,14 @@ export default function WhyUs() {
       {/* Header row */}
       <div className="px-6 md:px-12 lg:px-16 pt-14 pb-8 border-b border-navy/10 flex items-end justify-between gap-4">
         <h2
-          className="font-display text-navy"
+          className="font-serif text-navy"
           style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.8rem)', letterSpacing: '-0.01em' }}
         >
           WHY CAMLYNK
         </h2>
         <a
           href="#contact"
-          className="font-complement italic text-orange text-sm hover:text-navy transition-colors shrink-0"
+          className="font-sans italic text-orange text-sm hover:text-navy transition-colors shrink-0"
         >
           Book a free survey →
         </a>
@@ -33,19 +33,19 @@ export default function WhyUs() {
           >
             <div className="flex items-start gap-5">
               <span
-                className="font-display text-navy/10 leading-none shrink-0 mt-1"
+                className="font-serif text-navy/10 leading-none shrink-0 mt-1"
                 style={{ fontSize: '3rem' }}
               >
                 {num}
               </span>
               <div>
                 <h3
-                  className="font-display text-navy mb-3"
+                  className="font-serif text-navy mb-3"
                   style={{ fontSize: 'clamp(0.9rem, 1.8vw, 1.15rem)', letterSpacing: '1px' }}
                 >
                   {title}
                 </h3>
-                <p className="font-complement italic text-navy/50 text-sm leading-relaxed max-w-sm">{body}</p>
+                <p className="font-sans italic text-navy/50 text-sm leading-relaxed max-w-sm">{body}</p>
               </div>
             </div>
           </div>

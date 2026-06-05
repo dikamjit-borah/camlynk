@@ -39,15 +39,15 @@ export default function ContactSection() {
     }
   }
 
-  const inputClass = 'w-full border border-navy/15 px-4 py-3.5 font-complement text-navy text-sm bg-white focus:outline-none focus:border-orange transition-colors placeholder:text-navy/30 placeholder:italic'
+  const inputClass = 'w-full border border-navy/15 px-4 py-3.5 font-sans text-navy text-sm bg-white focus:outline-none focus:border-orange transition-colors placeholder:text-navy/30 placeholder:italic'
 
   return (
     <section id="contact" className="bg-white border-t-2 border-navy">
       {/* Header */}
       <div className="px-6 md:px-12 lg:px-16 pt-14 pb-8 border-b border-navy/10">
-        <p className="font-complement italic text-orange text-xs tracking-[3px] mb-3">Get in Touch</p>
+        <p className="font-sans italic text-orange text-xs tracking-[3px] mb-3">Get in Touch</p>
         <h2
-          className="font-display text-navy"
+          className="font-serif text-navy"
           style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.8rem)', letterSpacing: '-0.01em' }}
         >
           BOOK YOUR FREE SURVEY
@@ -88,20 +88,20 @@ export default function ContactSection() {
             onChange={e => setForm(f => ({ ...f, message: e.target.value }))}
           />
           {status === 'sent' ? (
-            <p className="font-complement italic text-orange text-sm">
+            <p className="font-sans italic text-orange text-sm">
               Thank you &mdash; we&apos;ll be in touch shortly.
             </p>
           ) : (
             <button
               type="submit"
               disabled={status === 'sending'}
-              className="w-full bg-navy text-white py-4 font-display text-[10px] tracking-[4px] hover:bg-orange transition-colors duration-200 disabled:opacity-50"
+              className="w-full bg-navy text-white py-4 font-serif text-[10px] tracking-[4px] hover:bg-orange transition-colors duration-200 disabled:opacity-50"
             >
               {status === 'sending' ? 'SENDING...' : 'SUBMIT REQUEST'}
             </button>
           )}
           {status === 'error' && (
-            <p className="font-complement italic text-red-500 text-sm">
+            <p className="font-sans italic text-red-500 text-sm">
               Something went wrong. Please WhatsApp or call us directly.
             </p>
           )}
@@ -119,8 +119,8 @@ export default function ContactSection() {
               <WhatsAppIcon />
             </div>
             <div>
-              <p className="font-display text-navy text-xs tracking-[2px]">WHATSAPP</p>
-              <p className="font-complement italic text-navy/40 text-xs mt-0.5">Quick replies, 7 days a week</p>
+              <p className="font-serif text-navy text-xs tracking-[2px]">WHATSAPP</p>
+              <p className="font-sans italic text-navy/40 text-xs mt-0.5">Quick replies, 7 days a week</p>
             </div>
           </a>
 
@@ -132,8 +132,8 @@ export default function ContactSection() {
               <Phone size={15} className="text-navy/50" strokeWidth={1.5} />
             </div>
             <div>
-              <p className="font-display text-navy text-xs tracking-[2px]">{PHONE}</p>
-              <p className="font-complement italic text-navy/40 text-xs mt-0.5">Call us directly</p>
+              <p className="font-serif text-navy text-xs tracking-[2px]">{PHONE}</p>
+              <p className="font-sans italic text-navy/40 text-xs mt-0.5">Call us directly</p>
             </div>
           </a>
 
@@ -142,8 +142,8 @@ export default function ContactSection() {
               <MapPin size={15} className="text-navy/50" strokeWidth={1.5} />
             </div>
             <div>
-              <p className="font-display text-navy text-xs tracking-[2px]">GUWAHATI, ASSAM</p>
-              <p className="font-complement italic text-navy/40 text-xs mt-0.5">
+              <p className="font-serif text-navy text-xs tracking-[2px]">GUWAHATI, ASSAM</p>
+              <p className="font-sans italic text-navy/40 text-xs mt-0.5">
                 Paltan Bazaar &middot; Fancy Bazaar &middot; Zoo Road &middot; Dispur
               </p>
             </div>

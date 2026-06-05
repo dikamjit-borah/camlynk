@@ -12,22 +12,22 @@ export default function CTABanner() {
   return (
     <section className="bg-orange border-t-2 border-navy">
       <div className="px-6 md:px-12 lg:px-16 py-16 md:py-20">
-        <p className="font-complement italic text-white/60 text-xs tracking-[3px] mb-6">
+        <p className="font-sans italic text-white/60 text-xs tracking-[3px] mb-6">
           Ready to start?
         </p>
         <h2
-          className="font-display text-white leading-[0.88] mb-8"
+          className="font-serif text-white leading-[0.88] mb-8"
           style={{ fontSize: 'clamp(2.5rem, 7vw, 5.5rem)', letterSpacing: '-0.02em' }}
         >
           FREE SITE SURVEY.<br />NO OBLIGATION.
         </h2>
-        <p className="font-complement italic text-white/70 text-base mb-10 max-w-md leading-relaxed">
+        <p className="font-sans italic text-white/70 text-base mb-10 max-w-md leading-relaxed">
           We&apos;ll visit your home or office and recommend the right setup at the right price.
         </p>
         <div className="flex flex-wrap gap-4">
           <a
             href={`tel:${PHONE}`}
-            className="flex items-center gap-2.5 bg-navy text-white px-8 py-4 font-display text-[10px] tracking-[3px] hover:bg-white hover:text-navy transition-colors duration-200"
+            className="flex items-center gap-2.5 bg-navy text-white px-8 py-4 font-serif text-[10px] tracking-[3px] hover:bg-white hover:text-navy transition-colors duration-200"
           >
             <Phone size={13} />
             CALL NOW
@@ -36,7 +36,7 @@ export default function CTABanner() {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2.5 border border-white/60 text-white px-8 py-4 font-display text-[10px] tracking-[3px] hover:bg-white/10 transition-colors"
+            className="flex items-center gap-2.5 border border-white/60 text-white px-8 py-4 font-serif text-[10px] tracking-[3px] hover:bg-white/10 transition-colors"
           >
             <WhatsAppIcon />
             WHATSAPP

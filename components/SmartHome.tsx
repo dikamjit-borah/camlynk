@@ -18,18 +18,18 @@ export default function SmartHome() {
 
         {/* Headline */}
         <div className="mb-16 md:mb-20">
-          <p className="font-complement italic text-orange text-xs tracking-[3px] mb-5">
+          <p className="font-sans italic text-orange text-xs tracking-[3px] mb-5">
             Beyond Security
           </p>
           <h2
-            className="font-display text-white leading-[0.88]"
+            className="font-serif text-white leading-[0.88]"
             style={{ fontSize: 'clamp(3rem, 8vw, 7rem)', letterSpacing: '-0.02em' }}
           >
             YOUR HOME,<br />
             <span className="text-orange">CONNECTED</span><br />
             &amp; CONTROLLED.
           </h2>
-          <p className="font-complement italic text-white/40 text-sm mt-6 max-w-xs leading-relaxed">
+          <p className="font-sans italic text-white/40 text-sm mt-6 max-w-xs leading-relaxed">
             Control, automate and monitor everything — from your phone, from anywhere in the world.
           </p>
         </div>
@@ -45,8 +45,8 @@ export default function SmartHome() {
                 <Icon size={15} className="text-orange" strokeWidth={1.5} />
               </div>
               <div>
-                <h3 className="font-display text-white text-xs tracking-[2px] mb-1">{title}</h3>
-                <p className="font-complement italic text-white/40 text-sm leading-relaxed">{detail}</p>
+                <h3 className="font-serif text-white text-xs tracking-[2px] mb-1">{title}</h3>
+                <p className="font-sans italic text-white/40 text-sm leading-relaxed">{detail}</p>
               </div>
             </div>
           ))}

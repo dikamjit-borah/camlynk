@@ -25,12 +25,12 @@ export default function ServicesOverview() {
       {/* Section label */}
       <div className="px-6 md:px-12 lg:px-16 pt-14 pb-8 flex items-end justify-between gap-4 border-b border-navy/10">
         <h2
-          className="font-display text-navy"
+          className="font-serif text-navy"
           style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.8rem)', letterSpacing: '-0.01em' }}
         >
           WHAT WE DO
         </h2>
-        <span className="font-complement italic text-navy/35 text-sm shrink-0">3 services</span>
+        <span className="font-sans italic text-navy/35 text-sm shrink-0">3 services</span>
       </div>
 
       {/* Service rows */}
@@ -42,7 +42,7 @@ export default function ServicesOverview() {
         >
           {/* Number */}
           <span
-            className="font-display shrink-0 leading-none text-navy/15 group-hover:text-white/20 transition-colors"
+            className="font-serif shrink-0 leading-none text-navy/15 group-hover:text-white/20 transition-colors"
             style={{ fontSize: 'clamp(2rem, 4.5vw, 3.5rem)' }}
           >
             {num}
@@ -51,18 +51,18 @@ export default function ServicesOverview() {
           {/* Content */}
           <div className="flex-1 min-w-0">
             <h3
-              className="font-display text-navy group-hover:text-white transition-colors"
+              className="font-serif text-navy group-hover:text-white transition-colors"
               style={{ fontSize: 'clamp(1.2rem, 2.8vw, 2rem)', letterSpacing: '-0.01em' }}
             >
               {title}
             </h3>
-            <p className="font-complement italic text-navy/45 group-hover:text-white/55 transition-colors text-sm mt-1.5">
+            <p className="font-sans italic text-navy/45 group-hover:text-white/55 transition-colors text-sm mt-1.5">
               {tagline}
             </p>
           </div>
 
           {/* Arrow */}
-          <span className="font-complement text-navy/20 group-hover:text-white/50 text-2xl shrink-0 group-hover:translate-x-1 transition-all duration-200">
+          <span className="font-sans text-navy/20 group-hover:text-white/50 text-2xl shrink-0 group-hover:translate-x-1 transition-all duration-200">
             →
           </span>
         </a>

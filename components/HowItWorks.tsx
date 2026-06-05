@@ -10,7 +10,7 @@ export default function HowItWorks() {
       {/* Header */}
       <div className="px-6 md:px-12 lg:px-16 pt-14 pb-8 border-b border-navy/10">
         <h2
-          className="font-display text-navy"
+          className="font-serif text-navy"
           style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.8rem)', letterSpacing: '-0.01em' }}
         >
           HOW IT WORKS
@@ -22,7 +22,7 @@ export default function HowItWorks() {
         {STEPS.map(({ step, title, body }) => (
           <div key={step} className="px-6 md:px-10 lg:px-14 py-12 relative">
             <span
-              className="block font-display text-navy/8 leading-none mb-8 select-none"
+              className="block font-serif text-navy/8 leading-none mb-8 select-none"
               style={{ fontSize: '5rem' }}
             >
               {step}
@@ -30,12 +30,12 @@ export default function HowItWorks() {
             {/* Orange step indicator */}
             <div className="h-[2px] bg-orange w-8 mb-6" />
             <h3
-              className="font-display text-navy mb-3"
+              className="font-serif text-navy mb-3"
               style={{ fontSize: 'clamp(0.85rem, 1.6vw, 1rem)', letterSpacing: '1.5px' }}
             >
               {title}
             </h3>
-            <p className="font-complement italic text-navy/50 text-sm leading-relaxed">{body}</p>
+            <p className="font-sans italic text-navy/50 text-sm leading-relaxed">{body}</p>
           </div>
         ))}
       </div>
