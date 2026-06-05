@@ -1,5 +1,4 @@
 import { ShieldCheck } from 'lucide-react'
-import { WHATSAPP_URL } from '@/lib/constants'
 
 export default function Hero() {
   return (
