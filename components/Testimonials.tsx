@@ -1,38 +1,52 @@
-import SectionWrapper from '@/components/SectionWrapper'
-import Eyebrow from '@/components/Eyebrow'
 import { TESTIMONIALS } from '@/lib/constants'
-
-function Stars({ rating }: { rating: number }) {
-  return (
-    <div className="flex gap-0.5 mb-3">
-      {Array.from({ length: rating }).map((_, i) => (
-        <svg key={i} viewBox="0 0 20 20" fill="#FFC81E" width="16" height="16">
-          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-        </svg>
-      ))}
-    </div>
-  )
-}
 
 export default function Testimonials() {
   return (
-    <SectionWrapper className="bg-cream py-20 px-6">
-      <div className="max-w-6xl mx-auto">
-        <Eyebrow>Customer Stories</Eyebrow>
-        <h2 className="text-4xl md:text-5xl font-black text-navy mb-12">What Our Clients Say</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {TESTIMONIALS.map(({ quote, name, location, rating }) => (
-            <div key={name} className="bg-white rounded-xl p-7 shadow-sm hover:shadow-md transition-shadow">
-              <Stars rating={rating} />
-              <p className="text-navy/70 text-sm leading-relaxed mb-5 italic">&ldquo;{quote}&rdquo;</p>
+    <section className="bg-white">
+      <div className="max-w-6xl mx-auto px-6 md:px-10 py-24">
+        <p className="text-[9px] font-extrabold tracking-[5px] uppercase text-orange mb-3">Customer Stories</p>
+        <h2
+          className="font-display font-extrabold text-navy mb-16"
+          style={{ fontSize: 'clamp(2rem, 4vw, 3rem)' }}
+        >
+          What Our Clients Say
+        </h2>
+
+        <div className="grid md:grid-cols-3 gap-0">
+          {TESTIMONIALS.map(({ quote, name, location, rating }, i) => (
+            <div
+              key={name}
+              className="py-8 md:py-0 md:px-10 border-t md:border-t-0 md:border-l border-navy/10 first:border-t-0 first:md:border-l-0 first:pl-0"
+            >
+              {/* Large decorative opening quote */}
+              <div
+                className="font-display font-extrabold text-gold leading-none mb-4 select-none"
+                style={{ fontSize: '5rem', lineHeight: '1' }}
+                aria-hidden="true"
+              >
+                &ldquo;
+              </div>
+
+              {/* Stars */}
+              <div className="flex gap-0.5 mb-4">
+                {Array.from({ length: rating }).map((_, j) => (
+                  <svg key={j} viewBox="0 0 12 12" fill="#FFC81E" width="12" height="12">
+                    <path d="M6 1l1.24 2.51L10 3.93l-2 1.95.47 2.76L6 7.27l-2.47 1.37L4 5.88 2 3.93l2.76-.42L6 1z" />
+                  </svg>
+                ))}
+              </div>
+
+              <p className="text-navy/70 text-sm leading-relaxed mb-6 italic">
+                {quote}
+              </p>
               <div>
-                <p className="text-navy font-extrabold text-sm">{name}</p>
-                <p className="text-navy/50 text-xs">{location}</p>
+                <p className="font-display font-bold text-navy text-sm">{name}</p>
+                <p className="text-navy/40 text-xs mt-0.5">{location}</p>
               </div>
             </div>
           ))}
         </div>
       </div>
-    </SectionWrapper>
+    </section>
   )
 }

@@ -2,50 +2,44 @@ import { PHONE, WHATSAPP_URL } from '@/lib/constants'
 
 export default function Footer() {
   return (
-    <footer className="bg-navy py-14 px-6">
-      <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
-          <div className="md:col-span-1">
-            <a href="/" className="text-2xl font-black">
-              <span className="text-orange">Cam</span>
-              <span className="text-steel-blue">lynk</span>
-            </a>
-            <p className="text-white/50 text-sm mt-3 leading-relaxed">
-              Professional security installation for homes and businesses across Guwahati, Assam.
-            </p>
-          </div>
-          <div>
-            <h4 className="text-white font-extrabold text-sm mb-4 uppercase tracking-wider">Quick Links</h4>
-            <ul className="space-y-2">
-              {[{ label: 'Services', href: '#services' }, { label: 'Why Us', href: '#why-us' }, { label: 'Contact', href: '#contact' }].map(({ label, href }) => (
-                <li key={href}>
-                  <a href={href} className="text-white/50 text-sm hover:text-gold transition-colors">{label}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h4 className="text-white font-extrabold text-sm mb-4 uppercase tracking-wider">Services</h4>
-            <ul className="space-y-2">
-              {['CCTV Installation', 'Smart Home', 'Burglar Alarms', 'Commercial Security'].map((s) => (
-                <li key={s}>
-                  <a href="#services" className="text-white/50 text-sm hover:text-gold transition-colors">{s}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h4 className="text-white font-extrabold text-sm mb-4 uppercase tracking-wider">Contact</h4>
-            <ul className="space-y-2">
-              <li><a href={`tel:${PHONE}`} className="text-white/50 text-sm hover:text-gold transition-colors">{PHONE}</a></li>
-              <li><a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="text-white/50 text-sm hover:text-gold transition-colors">WhatsApp</a></li>
-              <li className="text-white/50 text-sm">Guwahati, Assam</li>
-            </ul>
-          </div>
+    <footer className="bg-navy">
+      <div className="max-w-6xl mx-auto px-6 md:px-10 py-16">
+
+        {/* Top row — logo + nav */}
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 pb-10 border-b border-white/10">
+          <a href="/" className="font-display font-extrabold text-2xl">
+            <span className="text-orange">Cam</span>
+            <span className="text-steel-blue">lynk</span>
+          </a>
+          <nav className="flex flex-wrap gap-6">
+            {[
+              { label: 'Services', href: '#services' },
+              { label: 'Smart Home', href: '#smart-home' },
+              { label: 'Why Us', href: '#why-us' },
+              { label: 'Commercial', href: '#commercial' },
+              { label: 'Contact', href: '#contact' },
+            ].map(({ label, href }) => (
+              <a key={href} href={href} className="text-white/40 text-sm hover:text-gold transition-colors font-medium">
+                {label}
+              </a>
+            ))}
+          </nav>
         </div>
-        <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-3">
-          <p className="text-white/30 text-xs">&copy; {new Date().getFullYear()} Camlynk. All rights reserved.</p>
-          <p className="text-white/30 text-xs">Guwahati, Assam, India</p>
+
+        {/* Bottom row — contact + copyright */}
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 pt-8">
+          <div className="flex flex-wrap gap-6">
+            <a href={`tel:${PHONE}`} className="text-white/40 text-sm hover:text-white transition-colors">
+              {PHONE}
+            </a>
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="text-white/40 text-sm hover:text-white transition-colors">
+              WhatsApp
+            </a>
+            <span className="text-white/25 text-sm">Guwahati, Assam</span>
+          </div>
+          <p className="text-white/20 text-xs">
+            &copy; {new Date().getFullYear()} Camlynk. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

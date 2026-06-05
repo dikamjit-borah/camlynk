@@ -1,4 +1,3 @@
-import SectionWrapper from '@/components/SectionWrapper'
 import { PHONE, WHATSAPP_URL } from '@/lib/constants'
 import { Phone } from 'lucide-react'
 
@@ -11,30 +10,54 @@ const WhatsAppIcon = () => (
 
 export default function CTABanner() {
   return (
-    <SectionWrapper
-      className="py-20 px-6 text-center"
+    <section
+      className="relative overflow-hidden"
       style={{ background: 'linear-gradient(135deg, #E87F24 0%, #FFC81E 100%)' }}
     >
-      <div className="max-w-3xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-black text-white mb-4 drop-shadow-sm">
-          Get a Free Site Survey &mdash; No Obligation
-        </h2>
-        <p className="text-white/90 text-base mb-10">
-          We&apos;ll visit your home or office and recommend the right setup at the right price.
-        </p>
-        <div className="flex flex-wrap justify-center gap-4">
-          <a href={`tel:${PHONE}`}
-            className="flex items-center gap-2 bg-white text-orange px-7 py-3 rounded-lg font-black text-sm hover:bg-white/90 transition-colors">
-            <Phone size={16} />
-            Call Now
-          </a>
-          <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"
-            className="flex items-center gap-2 border-2 border-white text-white px-7 py-3 rounded-lg font-bold text-sm hover:bg-white/10 transition-colors">
-            <WhatsAppIcon />
-            WhatsApp Us
-          </a>
+      {/* Subtle texture overlay */}
+      <div
+        className="absolute inset-0 opacity-[0.06]"
+        style={{
+          backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)',
+          backgroundSize: '24px 24px',
+        }}
+        aria-hidden="true"
+      />
+
+      <div className="max-w-6xl mx-auto px-6 md:px-10 py-20 relative">
+        <div className="max-w-2xl">
+          <p className="text-[9px] font-extrabold tracking-[5px] uppercase text-white/60 mb-5">
+            Ready to start?
+          </p>
+          <h2
+            className="font-display font-extrabold text-white leading-[0.88] mb-6"
+            style={{ fontSize: 'clamp(2.5rem, 5.5vw, 4.5rem)' }}
+          >
+            Free site survey.<br />No obligation.
+          </h2>
+          <p className="text-white/80 text-base mb-10 max-w-md leading-relaxed">
+            We&apos;ll visit your home or office and recommend the right setup at the right price.
+          </p>
+          <div className="flex flex-wrap gap-4">
+            <a
+              href={`tel:${PHONE}`}
+              className="flex items-center gap-2 bg-white text-orange px-7 py-4 font-black text-sm hover:bg-navy hover:text-white transition-colors duration-300"
+            >
+              <Phone size={15} />
+              Call Now
+            </a>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 border-2 border-white/60 text-white px-7 py-4 font-bold text-sm hover:bg-white/10 transition-colors"
+            >
+              <WhatsAppIcon />
+              WhatsApp Us
+            </a>
+          </div>
         </div>
       </div>
-    </SectionWrapper>
+    </section>
   )
 }

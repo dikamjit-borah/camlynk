@@ -1,25 +1,53 @@
-import SectionWrapper from '@/components/SectionWrapper'
-import Eyebrow from '@/components/Eyebrow'
-import DynamicIcon from '@/components/DynamicIcon'
-import { CORE_SERVICES } from '@/lib/constants'
+import { Camera, BellRing, Video, ScanLine, PhoneCall } from 'lucide-react'
+
+const FEATURES = [
+  { Icon: Camera,    title: 'CCTV Installation',  detail: 'HD & 4K, night vision, remote viewing, cloud backup' },
+  { Icon: BellRing,  title: 'Burglar Alarms',      detail: 'Motion-triggered, loud siren, instant mobile alert' },
+  { Icon: Video,     title: 'Video Doorbell',      detail: 'See and speak to visitors from anywhere' },
+  { Icon: ScanLine,  title: 'Motion Sensors',      detail: 'Indoor & outdoor, pet-immune options available' },
+  { Icon: PhoneCall, title: 'Intercom Systems',    detail: 'Multi-unit and standalone audio/video intercom' },
+]
 
 export default function CoreSecurity() {
   return (
-    <SectionWrapper id="core-security" className="bg-cream py-20 px-6">
-      <div className="max-w-6xl mx-auto">
-        <Eyebrow>Core Security</Eyebrow>
-        <h2 className="text-4xl md:text-5xl font-black text-navy mb-12">Secure Every Corner</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {CORE_SERVICES.map(({ icon, title, description }) => (
-            <div key={title}
-              className="bg-white rounded-xl p-6 border-l-4 border-gold hover:shadow-lg hover:-translate-y-1 transition-all duration-200">
-              <DynamicIcon name={icon} size={28} className="text-orange mb-3" />
-              <h3 className="text-base font-extrabold text-navy mb-1">{title}</h3>
-              <p className="text-navy/60 text-sm leading-relaxed">{description}</p>
-            </div>
-          ))}
+    <section id="core-security" className="bg-cream">
+      <div className="max-w-6xl mx-auto px-6 md:px-10 py-24">
+        <div className="grid md:grid-cols-[1fr_1.4fr] gap-16 md:gap-24 items-start">
+
+          {/* Left — heading block */}
+          <div className="md:sticky md:top-32">
+            <p className="text-[9px] font-extrabold tracking-[5px] uppercase text-orange mb-4">Core Security</p>
+            <h2
+              className="font-display font-extrabold text-navy leading-[0.9] mb-6"
+              style={{ fontSize: 'clamp(2.4rem, 5vw, 4rem)' }}
+            >
+              Secure<br />Every<br />Corner.
+            </h2>
+            <p className="text-navy/50 text-sm leading-relaxed max-w-xs">
+              From high-definition cameras to smart alarm systems — we cover every entry point of your home or business.
+            </p>
+          </div>
+
+          {/* Right — feature list */}
+          <div>
+            {FEATURES.map(({ Icon, title, detail }, i) => (
+              <div
+                key={title}
+                className="flex items-start gap-5 py-6 border-b border-navy/10 last:border-0 group hover:bg-white/50 -mx-4 px-4 transition-colors"
+              >
+                <div className="w-10 h-10 rounded-full bg-orange/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-orange/20 transition-colors">
+                  <Icon size={18} className="text-orange" strokeWidth={1.8} />
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-display font-bold text-navy text-base mb-1">{title}</h3>
+                  <p className="text-navy/50 text-sm leading-relaxed">{detail}</p>
+                </div>
+                <span className="text-[10px] font-bold text-navy/15 self-center shrink-0">0{i + 1}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </SectionWrapper>
+    </section>
   )
 }

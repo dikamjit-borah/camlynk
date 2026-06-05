@@ -1,0 +1,154 @@
+<h2>Direction A — Refined (No Black)</h2>
+<p class="subtitle">Dark stat bar and text replaced with deep navy (#1B3A5C) — derived from your steel blue. Everything else stays the same.</p>
+
+<style>
+  .preview-wrap { border-radius: 14px; overflow: hidden; border: 2px solid #FFC81E; box-shadow: 0 8px 32px rgba(232,127,36,0.15); }
+
+  /* NAV */
+  .r-nav { background: #FEFDDF; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #FFC81E; }
+  .r-logo { font-size: 22px; font-weight: 900; color: #E87F24; letter-spacing: -0.5px; }
+  .r-logo span { color: #73A5CA; }
+  .r-nav-links { display: flex; gap: 24px; font-size: 13px; font-weight: 500; color: #1B3A5C; }
+  .r-nav-cta { background: #E87F24; color: white; padding: 8px 18px; border-radius: 7px; font-size: 13px; font-weight: 700; }
+
+  /* HERO */
+  .r-hero { background: #FEFDDF; display: flex; overflow: hidden; }
+  .r-hero-left { width: 55%; padding: 36px 28px; display: flex; flex-direction: column; justify-content: center; }
+  .r-eyebrow { font-size: 10px; font-weight: 800; letter-spacing: 3px; color: #E87F24; text-transform: uppercase; margin-bottom: 10px; }
+  .r-headline { font-size: 40px; font-weight: 900; line-height: 1.0; color: #1B3A5C; margin-bottom: 14px; }
+  .r-headline em { color: #E87F24; font-style: normal; display: block; }
+  .r-sub { font-size: 13px; color: #4a6a8a; margin-bottom: 22px; line-height: 1.5; }
+  .r-btns { display: flex; gap: 12px; }
+  .r-btn-pri { background: #E87F24; color: white; border: none; padding: 12px 22px; border-radius: 8px; font-size: 13px; font-weight: 700; }
+  .r-btn-sec { background: transparent; color: #1B3A5C; border: 2px solid #73A5CA; padding: 11px 22px; border-radius: 8px; font-size: 13px; font-weight: 600; }
+  .r-hero-right {
+    width: 45%;
+    background: linear-gradient(135deg, #FFC81E 0%, #E87F24 100%);
+    clip-path: polygon(18% 0%, 100% 0%, 100% 100%, 0% 100%);
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 12px;
+  }
+  .r-hero-icon { font-size: 64px; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15)); }
+  .r-hero-badge { background: rgba(255,255,255,0.3); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.5); border-radius: 20px; padding: 5px 14px; font-size: 10px; font-weight: 700; color: white; }
+
+  /* STATS BAR — deep navy instead of black */
+  .r-stats { display: flex; background: #1B3A5C; }
+  .r-stat { flex: 1; padding: 14px 10px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1); }
+  .r-stat:last-child { border-right: none; }
+  .r-stat-num { font-size: 20px; font-weight: 900; color: #FFC81E; }
+  .r-stat-lbl { font-size: 10px; color: rgba(255,255,255,0.75); margin-top: 2px; }
+
+  /* SERVICES */
+  .r-services { background: white; padding: 28px 24px; }
+  .r-sec-label { font-size: 10px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: #E87F24; margin-bottom: 6px; }
+  .r-sec-title { font-size: 22px; font-weight: 900; color: #1B3A5C; margin-bottom: 20px; }
+  .r-svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .r-svc-card { background: #FEFDDF; border-radius: 12px; padding: 18px; border-left: 4px solid #FFC81E; transition: all 0.2s; }
+  .r-svc-icon { font-size: 26px; margin-bottom: 10px; }
+  .r-svc-name { font-size: 13px; font-weight: 800; color: #1B3A5C; margin-bottom: 4px; }
+  .r-svc-desc { font-size: 11px; color: #4a6a8a; line-height: 1.4; }
+  .r-svc-more { font-size: 10px; font-weight: 700; color: #E87F24; margin-top: 8px; }
+
+  /* WHY US */
+  .r-why { background: #1B3A5C; padding: 28px 24px; }
+  .r-why .r-sec-label { color: #FFC81E; }
+  .r-why .r-sec-title { color: white; margin-bottom: 20px; }
+  .r-why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .r-why-item { background: rgba(255,255,255,0.08); border-radius: 10px; padding: 14px; text-align: center; border: 1px solid rgba(255,200,30,0.2); }
+  .r-why-icon { font-size: 22px; margin-bottom: 6px; }
+  .r-why-ttl { font-size: 11px; font-weight: 700; color: white; margin-bottom: 3px; }
+  .r-why-desc { font-size: 9px; color: rgba(255,255,255,0.6); }
+
+  /* CTA */
+  .r-cta { background: linear-gradient(135deg, #E87F24 0%, #FFC81E 100%); padding: 28px 24px; text-align: center; }
+  .r-cta h3 { font-size: 22px; font-weight: 900; color: white; margin-bottom: 8px; text-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+  .r-cta p { font-size: 12px; color: rgba(255,255,255,0.9); margin-bottom: 18px; }
+  .r-cta-btns { display: flex; justify-content: center; gap: 14px; }
+  .r-cta-pri { background: white; color: #E87F24; border: none; padding: 12px 24px; border-radius: 8px; font-size: 13px; font-weight: 800; }
+  .r-cta-sec { background: transparent; color: white; border: 2px solid white; padding: 11px 24px; border-radius: 8px; font-size: 13px; font-weight: 600; }
+</style>
+
+<div class="preview-wrap">
+  <!-- Nav -->
+  <div class="r-nav">
+    <div class="r-logo">Cam<span>lynk</span></div>
+    <div class="r-nav-links"><span>Services</span><span>Why Us</span><span>Contact</span></div>
+    <div class="r-nav-cta">💬 WhatsApp</div>
+  </div>
+
+  <!-- Hero -->
+  <div class="r-hero">
+    <div class="r-hero-left">
+      <div class="r-eyebrow">Guwahati's Trusted Security Partner</div>
+      <div class="r-headline">Protect<em>Everything.</em></div>
+      <div class="r-sub">Professional CCTV installation, smart home security & alarm systems for homes and businesses across Guwahati, Assam.</div>
+      <div class="r-btns">
+        <button class="r-btn-pri">Book Free Survey →</button>
+        <button class="r-btn-sec">View Services</button>
+      </div>
+    </div>
+    <div class="r-hero-right">
+      <div class="r-hero-icon">🛡️</div>
+      <div class="r-hero-badge">✓ 500+ Homes Secured</div>
+    </div>
+  </div>
+
+  <!-- Stats bar — deep navy -->
+  <div class="r-stats">
+    <div class="r-stat"><div class="r-stat-num">500+</div><div class="r-stat-lbl">Homes Secured</div></div>
+    <div class="r-stat"><div class="r-stat-num">5★</div><div class="r-stat-lbl">Google Rating</div></div>
+    <div class="r-stat"><div class="r-stat-num">24/7</div><div class="r-stat-lbl">Support</div></div>
+    <div class="r-stat"><div class="r-stat-num">5yr</div><div class="r-stat-lbl">Warranty</div></div>
+    <div class="r-stat"><div class="r-stat-num">8yr</div><div class="r-stat-lbl">Experience</div></div>
+  </div>
+
+  <!-- Services -->
+  <div class="r-services">
+    <div class="r-sec-label">What We Do</div>
+    <div class="r-sec-title">Complete Security Solutions</div>
+    <div class="r-svc-grid">
+      <div class="r-svc-card">
+        <div class="r-svc-icon">📷</div>
+        <div class="r-svc-name">CCTV Installation</div>
+        <div class="r-svc-desc">HD & 4K cameras with night vision, remote viewing & cloud backup</div>
+        <div class="r-svc-more">Learn more →</div>
+      </div>
+      <div class="r-svc-card">
+        <div class="r-svc-icon">🏠</div>
+        <div class="r-svc-name">Smart Home Security</div>
+        <div class="r-svc-desc">Automation, smart lighting, video doorbell & remote monitoring</div>
+        <div class="r-svc-more">Learn more →</div>
+      </div>
+      <div class="r-svc-card">
+        <div class="r-svc-icon">🔔</div>
+        <div class="r-svc-name">Alarms & Sensors</div>
+        <div class="r-svc-desc">Motion sensors, burglar alarms & intercom systems</div>
+        <div class="r-svc-more">Learn more →</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Why Us — deep navy bg -->
+  <div class="r-why">
+    <div class="r-sec-label">Why Camlynk</div>
+    <div class="r-sec-title">Built on Trust</div>
+    <div class="r-why-grid">
+      <div class="r-why-item"><div class="r-why-icon">⚡</div><div class="r-why-ttl">Same-Day Install</div><div class="r-why-desc">Quick, clean installation</div></div>
+      <div class="r-why-item"><div class="r-why-icon">🛠️</div><div class="r-why-ttl">AMC Available</div><div class="r-why-desc">Annual maintenance plans</div></div>
+      <div class="r-why-item"><div class="r-why-icon">📍</div><div class="r-why-ttl">Local Experts</div><div class="r-why-desc">Based in Guwahati</div></div>
+      <div class="r-why-item"><div class="r-why-icon">🔒</div><div class="r-why-ttl">5yr Warranty</div><div class="r-why-desc">On all equipment</div></div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="r-cta">
+    <h3>Get a Free Site Survey — No Obligation</h3>
+    <p>We'll visit your home or office and recommend the right setup at the right price.</p>
+    <div class="r-cta-btns">
+      <button class="r-cta-pri">📞 Call Now</button>
+      <button class="r-cta-sec">💬 WhatsApp Us</button>
+    </div>
+  </div>
+</div>
+
+<p class="subtitle" style="text-align:center; margin-top:16px;">Deep navy (#1B3A5C) replaces all black — on stats bar, "Why Us" section, and body text. Does this feel right? ✓</p>
