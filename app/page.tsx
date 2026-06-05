@@ -3,6 +3,7 @@ import Hero from '@/components/Hero'
 import TrustBar from '@/components/TrustBar'
 import ServicesOverview from '@/components/ServicesOverview'
 import CoreSecurity from '@/components/CoreSecurity'
+import SmartHome from '@/components/SmartHome'
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <TrustBar />
       <ServicesOverview />
       <CoreSecurity />
+      <SmartHome />
     </main>
   )
 }
