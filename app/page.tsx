@@ -6,6 +6,7 @@ import CoreSecurity from '@/components/CoreSecurity'
 import SmartHome from '@/components/SmartHome'
 import WhyUs from '@/components/WhyUs'
 import HowItWorks from '@/components/HowItWorks'
+import Commercial from '@/components/Commercial'
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <SmartHome />
       <WhyUs />
       <HowItWorks />
+      <Commercial />
     </main>
   )
 }
