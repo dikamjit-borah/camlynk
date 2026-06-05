@@ -9,6 +9,7 @@ import HowItWorks from '@/components/HowItWorks'
 import Commercial from '@/components/Commercial'
 import Testimonials from '@/components/Testimonials'
 import CTABanner from '@/components/CTABanner'
+import ContactSection from '@/components/ContactSection'
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
       <Commercial />
       <Testimonials />
       <CTABanner />
+      <ContactSection />
     </main>
   )
 }
