@@ -44,7 +44,7 @@ export default function ContactSection() {
   return (
     <section id="contact" className="bg-white border-t-2 border-navy">
       {/* Header */}
-      <div className="px-6 md:px-12 lg:px-16 pt-14 pb-8 border-b border-navy/10">
+      <div className="px-6 md:px-12 lg:px-16 xl:px-24 pt-14 pb-8 border-b border-navy/10">
         <p className="font-sans italic text-orange text-xs tracking-[3px] mb-3">Get in Touch</p>
         <h2
           className="font-serif text-navy"
@@ -56,7 +56,7 @@ export default function ContactSection() {
 
       <div className="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-navy/10">
         {/* Form */}
-        <form onSubmit={handleSubmit} className="px-6 md:px-12 lg:px-16 py-12 space-y-4">
+        <form onSubmit={handleSubmit} className="px-6 md:px-12 lg:px-16 xl:px-24 py-12 space-y-4">
           <input
             className={inputClass}
             placeholder="Your Name"
@@ -108,12 +108,12 @@ export default function ContactSection() {
         </form>
 
         {/* Contact details */}
-        <div className="px-6 md:px-12 lg:px-16 py-12 flex flex-col justify-center gap-0 divide-y divide-navy/10">
+        <div className="px-6 md:px-12 lg:px-16 xl:px-24 py-12 flex flex-col justify-center gap-0 divide-y divide-navy/10">
           <a
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-4 py-7 group hover:bg-navy/[0.02] -mx-6 md:-mx-12 lg:-mx-16 px-6 md:px-12 lg:px-16 transition-colors"
+            className="flex items-center gap-4 py-7 group hover:bg-navy/[0.02] -mx-6 md:-mx-12 lg:-mx-16 xl:-mx-24 px-6 md:px-12 lg:px-16 xl:px-24 transition-colors"
           >
             <div className="w-9 h-9 flex items-center justify-center shrink-0" style={{ background: '#25D366' }}>
               <WhatsAppIcon />
@@ -126,7 +126,7 @@ export default function ContactSection() {
 
           <a
             href={`tel:${PHONE}`}
-            className="flex items-center gap-4 py-7 group hover:bg-navy/[0.02] -mx-6 md:-mx-12 lg:-mx-16 px-6 md:px-12 lg:px-16 transition-colors"
+            className="flex items-center gap-4 py-7 group hover:bg-navy/[0.02] -mx-6 md:-mx-12 lg:-mx-16 xl:-mx-24 px-6 md:px-12 lg:px-16 xl:px-24 transition-colors"
           >
             <div className="w-9 h-9 border border-navy/15 flex items-center justify-center shrink-0">
               <Phone size={15} className="text-navy/50" strokeWidth={1.5} />

@@ -26,8 +26,12 @@ export default function Navbar() {
   }, [])
 
   return (
-    <header className={`sticky top-0 z-50 bg-white border-b border-navy/12 transition-shadow duration-200 ${scrolled ? 'shadow-[0_1px_0_0_#1B3A5C]' : ''}`}>
-      <nav className="max-w-none px-6 md:px-12 lg:px-16 py-4 flex items-center justify-between">
+    <header className={`sticky top-0 z-50 border-b transition-all duration-300 ${
+      scrolled
+        ? 'bg-white/95 backdrop-blur-sm border-navy/20 shadow-[0_4px_20px_rgba(27,58,92,0.07)]'
+        : 'bg-white border-navy/12'
+    }`}>
+      <nav className="max-w-none px-6 md:px-12 lg:px-16 xl:px-24 py-4 flex items-center justify-between">
         <a href="/" className="font-serif font-semibold text-xl leading-none tracking-tight">
           <span className="text-orange">Cam</span>
           <span className="text-navy italic">lynk</span>

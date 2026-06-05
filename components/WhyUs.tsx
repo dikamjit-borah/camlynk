@@ -1,3 +1,7 @@
+'use client'
+
+import { motion } from 'framer-motion'
+
 const REASONS = [
   { num: '01', title: 'SAME-DAY INSTALLATION',  body: 'Most jobs are quoted, confirmed and installed in a single visit. No long waits.' },
   { num: '02', title: '5-YEAR WARRANTY',         body: 'Every piece of equipment we install is fully covered for five years. No asterisks.' },
@@ -7,9 +11,10 @@ const REASONS = [
 
 export default function WhyUs() {
   return (
-    <section id="why-us" className="bg-white border-t-2 border-navy">
-      {/* Header row */}
-      <div className="px-6 md:px-12 lg:px-16 pt-14 pb-8 border-b border-navy/10 flex items-end justify-between gap-4">
+    <section id="why-us" className="border-t-2 border-navy">
+
+      {/* Header */}
+      <div className="bg-white px-6 md:px-12 lg:px-16 xl:px-24 pt-14 pb-8 border-b border-navy/10 flex items-end justify-between gap-4">
         <h2
           className="font-serif text-navy"
           style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.8rem)', letterSpacing: '-0.01em' }}
@@ -24,17 +29,55 @@ export default function WhyUs() {
         </a>
       </div>
 
-      {/* Reasons grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2">
-        {REASONS.map(({ num, title, body }, i) => (
-          <div
-            key={num}
-            className="px-6 md:px-12 lg:px-16 py-10 md:py-12 border-b border-navy/10 md:odd:border-r"
+      {/* Pull-stat — full-bleed dark strip */}
+      <div className="bg-navy relative overflow-hidden">
+        {/* Dot grid */}
+        <div
+          className="absolute inset-0 opacity-50"
+          style={{
+            backgroundImage: 'radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px)',
+            backgroundSize: '22px 22px',
+          }}
+        />
+        <div className="relative px-6 md:px-12 lg:px-16 xl:px-24 py-14 md:py-16 text-center">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.5 }}
+            className="font-serif text-white leading-tight"
+            style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.8rem)', letterSpacing: '-0.01em' }}
           >
+            500+ installations.{' '}
+            <span className="text-orange italic">Zero compromises.</span>
+          </motion.p>
+        </div>
+      </div>
+
+      {/* Reasons grid */}
+      <div className="bg-white grid grid-cols-1 md:grid-cols-2">
+        {REASONS.map(({ num, title, body }, i) => (
+          <motion.div
+            key={num}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.4, delay: i * 0.08, ease: 'easeOut' }}
+            className="relative px-6 md:px-12 lg:px-16 xl:px-24 py-10 md:py-12 border-b border-navy/10 md:odd:border-r overflow-hidden"
+          >
+            {/* Watermark */}
+            <span
+              className="absolute bottom-3 right-6 font-serif text-navy leading-none select-none pointer-events-none"
+              style={{ fontSize: '5.5rem', opacity: 0.04 }}
+              aria-hidden="true"
+            >
+              {num}
+            </span>
+
             <div className="flex items-start gap-5">
               <span
-                className="font-serif text-navy/10 leading-none shrink-0 mt-1"
-                style={{ fontSize: '3rem' }}
+                className="font-serif leading-none shrink-0 mt-1"
+                style={{ fontSize: '2.5rem', color: 'rgba(232,127,36,0.5)' }}
               >
                 {num}
               </span>
@@ -45,10 +88,11 @@ export default function WhyUs() {
                 >
                   {title}
                 </h3>
+                <div className="h-[2px] bg-orange w-6 mb-3" />
                 <p className="font-sans italic text-navy/50 text-sm leading-relaxed max-w-sm">{body}</p>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

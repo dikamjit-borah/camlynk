@@ -10,8 +10,18 @@ const WhatsAppIcon = () => (
 
 export default function CTABanner() {
   return (
-    <section className="bg-orange border-t-2 border-navy">
-      <div className="px-6 md:px-12 lg:px-16 py-16 md:py-20">
+    <section className="bg-orange border-t-2 border-navy relative overflow-hidden">
+
+      {/* Dot grid texture overlay */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: 'radial-gradient(rgba(255,255,255,0.18) 1px, transparent 1px)',
+          backgroundSize: '20px 20px',
+        }}
+      />
+
+      <div className="relative px-6 md:px-12 lg:px-16 xl:px-24 py-16 md:py-20">
         <p className="font-sans italic text-white/60 text-xs tracking-[3px] mb-6">
           Ready to start?
         </p>
@@ -25,13 +35,23 @@ export default function CTABanner() {
           We&apos;ll visit your home or office and recommend the right setup at the right price.
         </p>
         <div className="flex flex-wrap gap-4">
+          {/* Primary CTA — shimmer effect */}
           <a
             href={`tel:${PHONE}`}
-            className="flex items-center gap-2.5 bg-navy text-white px-8 py-4 font-serif text-[10px] tracking-[3px] hover:bg-white hover:text-navy transition-colors duration-200"
+            className="relative flex items-center gap-2.5 bg-navy text-white px-8 py-4 font-serif text-[10px] tracking-[3px] overflow-hidden hover:bg-white hover:text-navy transition-colors duration-200 group"
           >
-            <Phone size={13} />
-            CALL NOW
+            <span
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.1) 50%, transparent 100%)',
+                backgroundSize: '250% auto',
+                animation: 'shimmer 2.8s linear infinite',
+              }}
+            />
+            <Phone size={13} className="relative" />
+            <span className="relative">CALL NOW</span>
           </a>
+
           <a
             href={WHATSAPP_URL}
             target="_blank"

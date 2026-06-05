@@ -13,6 +13,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
   body {
     background: #ffffff;
@@ -23,4 +24,9 @@
   *, *::before, *::after {
     border-radius: 0 !important;
   }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -250% center; }
+  100% { background-position: 250% center; }
 }

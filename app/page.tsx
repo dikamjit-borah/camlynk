@@ -6,8 +6,8 @@ import SmartHome from '@/components/SmartHome'
 import WhyUs from '@/components/WhyUs'
 import HowItWorks from '@/components/HowItWorks'
 import Commercial from '@/components/Commercial'
-import Testimonials from '@/components/Testimonials'
 import CTABanner from '@/components/CTABanner'
+import FAQ from '@/components/FAQ'
 import ContactSection from '@/components/ContactSection'
 import Footer from '@/components/Footer'
 import FloatingWhatsApp from '@/components/FloatingWhatsApp'
@@ -23,8 +23,8 @@ export default function Home() {
       <WhyUs />
       <HowItWorks />
       <Commercial />
-      <Testimonials />
       <CTABanner />
+      <FAQ />
       <ContactSection />
       <Footer />
       <FloatingWhatsApp />
