@@ -4,6 +4,8 @@ import TrustBar from '@/components/TrustBar'
 import ServicesOverview from '@/components/ServicesOverview'
 import CoreSecurity from '@/components/CoreSecurity'
 import SmartHome from '@/components/SmartHome'
+import WhyUs from '@/components/WhyUs'
+import HowItWorks from '@/components/HowItWorks'
 
 export default function Home() {
   return (
@@ -14,6 +16,8 @@ export default function Home() {
       <ServicesOverview />
       <CoreSecurity />
       <SmartHome />
+      <WhyUs />
+      <HowItWorks />
     </main>
   )
 }
