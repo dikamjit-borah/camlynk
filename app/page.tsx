@@ -7,6 +7,7 @@ import SmartHome from '@/components/SmartHome'
 import WhyUs from '@/components/WhyUs'
 import HowItWorks from '@/components/HowItWorks'
 import Commercial from '@/components/Commercial'
+import Testimonials from '@/components/Testimonials'
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <WhyUs />
       <HowItWorks />
       <Commercial />
+      <Testimonials />
     </main>
   )
 }
