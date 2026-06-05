@@ -2,6 +2,7 @@ import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
 import TrustBar from '@/components/TrustBar'
 import ServicesOverview from '@/components/ServicesOverview'
+import CoreSecurity from '@/components/CoreSecurity'
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <Hero />
       <TrustBar />
       <ServicesOverview />
+      <CoreSecurity />
     </main>
   )
 }
