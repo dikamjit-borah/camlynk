@@ -1,48 +1,55 @@
 const REASONS = [
-  { num: '01', title: 'Same-Day Installation',    body: 'No long waits. Most jobs are quoted, confirmed and installed in a single visit.' },
-  { num: '02', title: '5-Year Warranty',          body: 'Every piece of equipment we install is covered for five full years. No asterisks.' },
-  { num: '03', title: 'Local Experts',            body: 'We live here. We know Guwahati — its streets, its buildings, its specific needs.' },
-  { num: '04', title: 'AMC Plans Available',      body: 'Optional annual maintenance contracts keep your systems running at zero stress.' },
+  { num: '01', title: 'SAME-DAY INSTALLATION',  body: 'Most jobs are quoted, confirmed and installed in a single visit. No long waits.' },
+  { num: '02', title: '5-YEAR WARRANTY',         body: 'Every piece of equipment we install is fully covered for five years. No asterisks.' },
+  { num: '03', title: 'LOCAL TO GUWAHATI',       body: 'We live here. We know the city, its buildings, and its specific security needs.' },
+  { num: '04', title: 'AMC PLANS AVAILABLE',     body: 'Affordable annual maintenance contracts that keep your systems running flawlessly.' },
 ]
 
 export default function WhyUs() {
   return (
-    <section id="why-us" className="bg-white">
-      <div className="max-w-6xl mx-auto px-6 md:px-10 py-24">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-6">
-          <div>
-            <p className="text-[9px] font-extrabold tracking-[5px] uppercase text-orange mb-3">Why Camlynk</p>
-            <h2
-              className="font-display font-extrabold text-navy leading-[0.9]"
-              style={{ fontSize: 'clamp(2rem, 4.5vw, 3.5rem)' }}
-            >
-              Built on trust.<br />Proven by results.
-            </h2>
-          </div>
-          <a
-            href="#contact"
-            className="text-sm font-bold text-orange border-b-2 border-orange pb-0.5 hover:text-navy hover:border-navy transition-colors self-start md:self-end whitespace-nowrap"
-          >
-            Get a Free Survey →
-          </a>
-        </div>
+    <section id="why-us" className="bg-white border-t-2 border-navy">
+      {/* Header row */}
+      <div className="px-6 md:px-12 lg:px-16 pt-14 pb-8 border-b border-navy/10 flex items-end justify-between gap-4">
+        <h2
+          className="font-display text-navy"
+          style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.8rem)', letterSpacing: '-0.01em' }}
+        >
+          WHY CAMLYNK
+        </h2>
+        <a
+          href="#contact"
+          className="font-complement italic text-orange text-sm hover:text-navy transition-colors shrink-0"
+        >
+          Book a free survey →
+        </a>
+      </div>
 
-        <div className="grid md:grid-cols-2 gap-0">
-          {REASONS.map(({ num, title, body }) => (
-            <div
-              key={num}
-              className="py-8 md:py-10 px-0 md:px-10 border-t border-navy/10 md:even:border-l flex gap-6 items-start"
-            >
-              <span className="font-display font-extrabold text-navy/12 leading-none shrink-0 mt-0.5" style={{ fontSize: '2.5rem' }}>
+      {/* Reasons grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2">
+        {REASONS.map(({ num, title, body }, i) => (
+          <div
+            key={num}
+            className="px-6 md:px-12 lg:px-16 py-10 md:py-12 border-b border-navy/10 md:odd:border-r"
+          >
+            <div className="flex items-start gap-5">
+              <span
+                className="font-display text-navy/10 leading-none shrink-0 mt-1"
+                style={{ fontSize: '3rem' }}
+              >
                 {num}
               </span>
               <div>
-                <h3 className="font-display font-bold text-navy mb-2" style={{ fontSize: '1.1rem' }}>{title}</h3>
-                <p className="text-navy/50 text-sm leading-relaxed">{body}</p>
+                <h3
+                  className="font-display text-navy mb-3"
+                  style={{ fontSize: 'clamp(0.9rem, 1.8vw, 1.15rem)', letterSpacing: '1px' }}
+                >
+                  {title}
+                </h3>
+                <p className="font-complement italic text-navy/50 text-sm leading-relaxed max-w-sm">{body}</p>
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </section>
   )

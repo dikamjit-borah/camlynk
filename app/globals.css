@@ -1,13 +1,38 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Calvus';
+  src: url('/Calvus.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Thernaly';
+  src: url('/Thernaly-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Thernaly';
+  src: url('/Thernaly-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
 @theme {
   --color-orange: #E87F24;
   --color-gold: #FFC81E;
   --color-cream: #FEFDDF;
   --color-steel-blue: #73A5CA;
   --color-navy: #1B3A5C;
-  --font-sans: var(--font-plus-jakarta-sans), sans-serif;
-  --font-display: var(--font-unbounded), sans-serif;
+  --font-display: 'Calvus', serif;
+  --font-complement: 'Thernaly', serif;
+  --font-sans: 'Thernaly', serif;
 }
 
 @layer base {
@@ -15,8 +40,12 @@
     scroll-behavior: smooth;
   }
   body {
-    background-color: #ffffff;
+    background: #ffffff;
     color: var(--color-navy);
-    font-family: var(--font-sans);
+    font-family: var(--font-complement);
+    -webkit-font-smoothing: antialiased;
+  }
+  *, *::before, *::after {
+    border-radius: 0 !important;
   }
 }
