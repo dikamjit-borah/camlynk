@@ -8,6 +8,7 @@ import WhyUs from '@/components/WhyUs'
 import HowItWorks from '@/components/HowItWorks'
 import Commercial from '@/components/Commercial'
 import Testimonials from '@/components/Testimonials'
+import CTABanner from '@/components/CTABanner'
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <HowItWorks />
       <Commercial />
       <Testimonials />
+      <CTABanner />
     </main>
   )
 }
