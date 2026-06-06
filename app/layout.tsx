@@ -55,7 +55,7 @@ const jsonLd = {
   name: 'Camlynk',
   description: 'Professional CCTV, smart home security and alarm system installation across Guwahati, Assam.',
   url: BASE_URL,
-  telephone: '+91-98765-43210',
+  telephone: '+91-9972551379',
   priceRange: '$$',
   address: {
     '@type': 'PostalAddress',

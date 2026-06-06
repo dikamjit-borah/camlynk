@@ -143,7 +143,7 @@ export default function ContactSection() {
                 <input
                   style={fieldBase}
                   type="tel"
-                  placeholder="+91 98765 43210"
+                  placeholder="+91 99725 51379"
                   value={form.phone}
                   onChange={e => setForm(f => ({ ...f, phone: e.target.value }))}
                   onFocus={e => (e.target.style.borderBottomColor = 'var(--color-accent)')}

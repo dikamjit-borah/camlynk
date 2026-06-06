@@ -28,10 +28,27 @@ export default function Footer() {
           ))}
         </nav>
 
-        {/* Copyright */}
-        <p className="font-sans text-[var(--color-ink-3)] text-xs shrink-0">
-          &copy; {new Date().getFullYear()} Camlynk · Guwahati, Assam
-        </p>
+        {/* Copyright & Attribution */}
+        <div className="flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-4 shrink-0">
+          <p className="font-sans text-[var(--color-ink-3)] text-xs">
+            &copy; {new Date().getFullYear()} Camlynk · Guwahati, Assam
+          </p>
+          <p className="font-sans text-[var(--color-ink-3)] text-xs">
+            Powered by{' '}
+            <a
+              href="https://backendandbeyond.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-ink transition-colors underline"
+              style={{
+                transitionDuration: 'var(--dur-short)',
+                transitionTimingFunction: 'var(--ease-out)',
+              }}
+            >
+              Backend & Beyond
+            </a>
+          </p>
+        </div>
       </div>
     </footer>
   )

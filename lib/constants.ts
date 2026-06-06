@@ -1,5 +1,5 @@
-export const PHONE = '+91 98765 43210'
-export const WHATSAPP_NUMBER = '919876543210'
+export const PHONE = '+91 99725 51379'
+export const WHATSAPP_NUMBER = '919972551379'
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`
 
 export const STATS = [

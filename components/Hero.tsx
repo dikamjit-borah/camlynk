@@ -60,6 +60,21 @@ export default function Hero() {
         }}
       />
 
+      {/* estd 2025 — vertically centered on right */}
+      {/* <motion.span
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.3, ease: EASE_OUT }}
+        className="font-sans text-[var(--color-ink-3)] text-[10px] uppercase absolute right-6 md:right-12 lg:right-16 xl:right-24 top-1/2 -translate-y-1/2"
+        style={{
+          writingMode: 'vertical-rl',
+          letterSpacing: '0.2em',
+          lineHeight: 1,
+        }}
+      >
+        estd 2025
+      </motion.span> */}
+
       {/* Main content */}
       <div className="relative flex-1 min-h-0 flex flex-col px-6 md:px-12 lg:px-16 xl:px-24 pt-10 md:pt-12 pb-0">
 
@@ -87,21 +102,10 @@ export default function Hero() {
             </span>
           </div>
 
-          {/* Right — tagline + estd label */}
+          {/* Right — tagline */}
           <div className="flex items-center gap-5">
             <span className="font-sans text-[var(--color-ink-3)] text-[10px] tracking-[0.2em] uppercase hidden md:block">
               Security · Smart Home · Automation
-            </span>
-            <span
-              className="font-sans text-[var(--color-ink-3)] text-[10px] uppercase"
-              style={{
-                writingMode: 'vertical-rl',
-                transform: 'rotate(180deg)',
-                letterSpacing: '0.2em',
-                lineHeight: 1,
-              }}
-            >
-              estd 2025
             </span>
           </div>
         </motion.div>
