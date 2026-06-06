@@ -1,32 +1,114 @@
+/* Hallmark · macrostructure: Split Studio · tone: luxury · anchor hue: gold 80° · genre: editorial · nav: N9 · footer: Ft5 */
+/* Hallmark · pre-emit critique: P4 H4 E4 S4 R4 V5 · contrast: pass (40–41) · nav: N9 · footer: Ft5 · slop: pass (42–45) · honest: pass (46) · chrome: pass (47) · tokens: pass (48) · responsive: pass (49) · icons: pass (30) · mobile: pass (34, 49, 50–57) */
 @import "tailwindcss";
 
 @theme {
-  --color-orange: #E87F24;
-  --color-gold: #FFC81E;
-  --color-cream: #FEFDDF;
-  --color-steel-blue: #73A5CA;
-  --color-navy: #1B3A5C;
-  --font-serif: var(--font-cormorant), 'Georgia', serif;
-  --font-sans:  var(--font-outfit), system-ui, sans-serif;
+  /* Brand palette — OKLCH */
+  --color-orange:     oklch(65% 0.17 44);
+  --color-gold:       oklch(83% 0.19 82);
+  --color-cream:      oklch(95% 0.01 80);
+  --color-steel-blue: oklch(67% 0.07 225);
+  --color-navy:       oklch(14% 0.03 220);
+  --color-dark-mid:   oklch(19% 0.03 220);
+
+  /* Hallmark token surface */
+  --color-paper:      oklch(14% 0.03 220);
+  --color-paper-2:    oklch(19% 0.03 220);
+  --color-paper-3:    oklch(24% 0.02 220);
+  --color-ink:        oklch(94% 0.008 80);
+  --color-ink-2:      oklch(75% 0.006 80);
+  --color-ink-3:      oklch(55% 0.006 80);
+  --color-rule:       oklch(28% 0.008 220);
+  --color-accent:     oklch(83% 0.19 82);
+  --color-accent-2:   oklch(65% 0.17 44);
+  --color-light:      oklch(95% 0.01 80);
+  --color-light-2:    oklch(90% 0.012 80);
+  --color-focus:      oklch(52% 0.19 82);
+  --color-whatsapp:   #25D366;
+
+  --font-serif:   var(--font-cormorant), 'Georgia', serif;
+  --font-sans:    var(--font-outfit), system-ui, sans-serif;
+  --font-display: var(--font-cormorant), 'Georgia', serif;
+  --font-body:    var(--font-outfit), system-ui, sans-serif;
+}
+
+:root {
+  /* Spacing — 4pt scale */
+  --space-3xs: 0.125rem;
+  --space-2xs: 0.25rem;
+  --space-xs:  0.5rem;
+  --space-sm:  0.75rem;
+  --space-md:  1rem;
+  --space-lg:  1.5rem;
+  --space-xl:  2.5rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+  --space-4xl: 9rem;
+
+  /* Type scale — 1.25 major third */
+  --text-xs:        0.64rem;
+  --text-sm:        0.8rem;
+  --text-base:      1rem;
+  --text-md:        1.25rem;
+  --text-lg:        1.5625rem;
+  --text-xl:        1.9531rem;
+  --text-2xl:       2.4414rem;
+  --text-3xl:       3.0518rem;
+  --text-4xl:       3.8147rem;
+  --text-display-s: clamp(2.2rem, 4vw + 1rem, 4.2rem);
+  --text-display:   clamp(2.75rem, 5vw + 1rem, 5.25rem);
+
+  /* Motion */
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:     cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro:   120ms;
+  --dur-short:   220ms;
+  --dur-long:    420ms;
+
+  /* Z-index */
+  --z-base:     1;
+  --z-raised:   10;
+  --z-dropdown: 100;
+  --z-sticky:   200;
+  --z-modal:    400;
+  --z-toast:    500;
+  --z-tooltip:  600;
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
-    overflow-x: hidden;
+    overflow-x: clip;
   }
   body {
-    background: #ffffff;
-    color: var(--color-navy);
-    font-family: var(--font-sans);
+    background: var(--color-light);
+    color: var(--color-paper);
+    font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
   }
   *, *::before, *::after {
     border-radius: 0 !important;
   }
+  :focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
+  }
 }
 
-@keyframes shimmer {
-  0%   { background-position: -250% center; }
-  100% { background-position: 250% center; }
+@keyframes reveal {
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes ticker {
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 150ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 150ms !important;
+  }
 }

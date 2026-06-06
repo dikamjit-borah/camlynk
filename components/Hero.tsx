@@ -1,187 +1,246 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { STATS } from '@/lib/constants'
-import { useCountUp } from '@/hooks/useCountUp'
+import { motion, AnimatePresence } from 'framer-motion'
+import { useState, useEffect, useRef } from 'react'
 
-function StatItem({ value, suffix, label }: { value: number; suffix: string; label: string }) {
-  const { count, ref } = useCountUp(value)
-  return (
-    <div
-      ref={ref as React.RefObject<HTMLDivElement>}
-      className="flex-1 px-6 md:px-8 py-5 border-r border-navy/15 last:border-r-0 min-w-0"
-    >
-      <div className="font-serif font-semibold text-navy leading-none" style={{ fontSize: 'clamp(1.4rem, 2.8vw, 2.2rem)' }}>
-        {count}{suffix}
-      </div>
-      <div className="font-sans text-navy/40 text-[11px] mt-1.5 tracking-widest uppercase">{label}</div>
-    </div>
-  )
-}
+const EASE_OUT = [0.16, 1, 0.3, 1] as const
+
+const CYCLING_WORDS = ['Secured.', 'Automated.', 'Connected.']
+
+const SERVICES = [
+  'CCTV Installation',
+  'Burglar Alarms',
+  'Video Doorbell',
+  'Smart Home',
+  'Biometric Attendance',
+  'Access Control',
+  'Motion Sensors',
+  'Intercom Systems',
+]
 
 export default function Hero() {
+  const [wordIdx, setWordIdx] = useState(0)
+  const hasCycled = useRef(false)
+
+  useEffect(() => {
+    let intervalId: ReturnType<typeof setInterval>
+    const timeoutId = setTimeout(() => {
+      hasCycled.current = true
+      intervalId = setInterval(() => setWordIdx(i => (i + 1) % CYCLING_WORDS.length), 3500)
+    }, 2400)
+    return () => {
+      clearTimeout(timeoutId)
+      clearInterval(intervalId)
+    }
+  }, [])
+
   return (
-    <section className="bg-white min-h-screen flex flex-col border-b-2 border-navy">
+    <section
+      className="relative bg-navy flex flex-col overflow-hidden"
+      style={{ height: 'calc(100vh - 5.25rem)' }}
+    >
+      {/* Dot grid */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: 'radial-gradient(circle, var(--color-rule) 1px, transparent 1px)',
+          backgroundSize: '44px 44px',
+          opacity: 0.5,
+        }}
+      />
 
-      {/* Orange blade */}
-      <div className="h-[3px] bg-orange w-full shrink-0" />
+      {/* Vignette — centred focal point */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: 'radial-gradient(ellipse at 50% 48%, transparent 22%, var(--color-paper) 86%)',
+          opacity: 0.75,
+        }}
+      />
 
-      {/* Split: left content + right geometric surveillance panel */}
-      <div className="flex-1 grid md:grid-cols-[1fr_380px] lg:grid-cols-[1fr_460px] overflow-hidden">
+      {/* Main content */}
+      <div className="relative flex-1 min-h-0 flex flex-col px-6 md:px-12 lg:px-16 xl:px-24 pt-10 md:pt-12 pb-0">
 
-        {/* Left — content */}
-        <div className="flex flex-col px-6 md:px-12 lg:px-16 xl:px-24 pt-10 md:pt-14 pb-6">
-
-          <motion.div
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.45, ease: [0.25, 0.1, 0.25, 1] }}
-            className="flex items-center justify-between mb-8 md:mb-12"
-          >
-            <span className="font-sans text-navy/35 text-xs tracking-widest uppercase">
+        {/* Top meta — centred */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: EASE_OUT }}
+          className="flex items-center justify-between"
+        >
+          {/* Left — location */}
+          <div className="flex items-center gap-3">
+            <span className="relative flex items-center justify-center w-2 h-2 shrink-0">
+              <motion.span
+                aria-hidden="true"
+                className="absolute inset-0 bg-[var(--color-accent)]"
+                style={{ clipPath: 'circle(50%)' }}
+                animate={{ scale: [1, 2.8, 1], opacity: [0.65, 0, 0.65] }}
+                transition={{ duration: 2.6, repeat: Infinity, ease: 'easeOut', delay: 2 }}
+              />
+              <span className="relative w-2 h-2 bg-[var(--color-accent)]" style={{ clipPath: 'circle(50%)' }} />
+            </span>
+            <span className="font-sans text-[var(--color-ink-3)] text-[10px] tracking-[0.2em] uppercase">
               Guwahati, Assam — India
             </span>
-            <span className="font-sans text-navy/35 text-xs tracking-widest uppercase hidden md:block">
-              CCTV · Smart Home · Security
+          </div>
+
+          {/* Right — tagline + estd label */}
+          <div className="flex items-center gap-5">
+            <span className="font-sans text-[var(--color-ink-3)] text-[10px] tracking-[0.2em] uppercase hidden md:block">
+              Security · Smart Home · Automation
             </span>
+            <span
+              className="font-sans text-[var(--color-ink-3)] text-[10px] uppercase"
+              style={{
+                writingMode: 'vertical-rl',
+                transform: 'rotate(180deg)',
+                letterSpacing: '0.2em',
+                lineHeight: 1,
+              }}
+            >
+              estd 2025
+            </span>
+          </div>
+        </motion.div>
+
+        {/* Headline + body — centred */}
+        <div className="flex-1 min-h-0 flex flex-col items-center justify-center text-center py-8">
+
+          <h1 style={{ letterSpacing: '-0.02em' }}>
+            <motion.span
+              className="block font-semibold text-ink"
+              style={{
+                fontFamily: 'var(--font-fraunces), Georgia, serif',
+                fontSize: 'clamp(4rem, 8vw, 8rem)',
+                lineHeight: '1.05',
+                fontStyle: 'normal',
+                fontWeight: 700,
+              }}
+              initial={{ clipPath: 'inset(0% -5% 110% -5%)' }}
+              animate={{ clipPath: 'inset(0% -5% -30% -5%)' }}
+              transition={{ duration: 0.9, delay: 0.34, ease: EASE_OUT }}
+            >
+              Every home,
+            </motion.span>
+
+            <div style={{ marginTop: '-0.1em' }}>
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={CYCLING_WORDS[wordIdx]}
+                  className="block font-semibold"
+                  style={{
+                    fontFamily: 'var(--font-fraunces), Georgia, serif',
+                    fontSize: 'clamp(4rem, 8vw, 8rem)',
+                    lineHeight: '1.05',
+                    fontStyle: 'italic',
+                    fontWeight: 700,
+                    color: 'var(--color-accent)',
+                  }}
+                  initial={{ clipPath: 'inset(0% -5% 110% -5%)' }}
+                  animate={{ clipPath: 'inset(0% -5% -30% -5%)' }}
+                  exit={{ clipPath: 'inset(110% -5% 0% -5%)' }}
+                  transition={{
+                    duration: hasCycled.current ? 0.65 : 0.9,
+                    delay: hasCycled.current ? 0 : 0.52,
+                    ease: EASE_OUT,
+                  }}
+                >
+                  {CYCLING_WORDS[wordIdx]}
+                </motion.span>
+              </AnimatePresence>
+            </div>
+          </h1>
+
+          {/* Hairline rule — centred */}
+          <motion.div
+            className="h-px bg-[var(--color-rule)] mt-10 mb-8 w-16"
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 0.7, delay: 1.05, ease: EASE_OUT }}
+            style={{ transformOrigin: 'center' }}
+          />
+
+          {/* Lede */}
+          <motion.p
+            className="font-sans text-[var(--color-ink-3)] text-sm leading-relaxed mb-10 max-w-sm text-center"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1.14, ease: EASE_OUT }}
+          >
+            From CCTV and burglar alarms to smart home automation — professional installation, 24/7 support, and a 5-year warranty in Guwahati.
+          </motion.p>
+
+          {/* CTAs */}
+          <motion.div
+            className="flex items-center justify-center gap-4 flex-wrap"
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 1.28, ease: EASE_OUT }}
+          >
+            <a
+              href="#contact"
+              className="font-sans font-medium uppercase text-[var(--color-paper)] bg-[var(--color-accent)] hover:bg-ink hover:text-[var(--color-paper)] transition-colors"
+              style={{
+                fontSize: '0.625rem',
+                letterSpacing: '0.25em',
+                padding: '1rem 2rem',
+                transitionDuration: 'var(--dur-short)',
+                transitionTimingFunction: 'var(--ease-out)',
+                whiteSpace: 'nowrap',
+              }}
+            >
+              Book Survey
+            </a>
+            <a
+              href="#services"
+              className="font-sans font-medium uppercase text-[var(--color-ink-2)] border border-[var(--color-rule)] hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] transition-colors"
+              style={{
+                fontSize: '0.625rem',
+                letterSpacing: '0.25em',
+                padding: '1rem 2rem',
+                transitionDuration: 'var(--dur-short)',
+                transitionTimingFunction: 'var(--ease-out)',
+                whiteSpace: 'nowrap',
+              }}
+            >
+              Our Services
+            </a>
           </motion.div>
-
-          <div className="flex-1 flex flex-col justify-center pb-10">
-            <h1 className="leading-none" style={{ letterSpacing: '-0.02em' }}>
-              <motion.span
-                initial={{ opacity: 0, y: 28 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.55, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
-                className="block font-serif font-semibold text-navy"
-                style={{ fontSize: 'clamp(4.5rem, 11vw, 10rem)', lineHeight: '0.88' }}
-              >
-                Protect
-              </motion.span>
-              <motion.span
-                initial={{ opacity: 0, y: 28 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.55, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
-                className="block font-serif font-semibold italic text-orange"
-                style={{
-                  fontSize: 'clamp(4.5rem, 11vw, 10rem)',
-                  lineHeight: '0.88',
-                  paddingLeft: 'clamp(1.5rem, 5vw, 5rem)',
-                }}
-              >
-                Everything.
-              </motion.span>
-            </h1>
-
-            <motion.div
-              initial={{ opacity: 0, scaleX: 0 }}
-              animate={{ opacity: 1, scaleX: 1 }}
-              transition={{ duration: 0.4, delay: 0.35, ease: 'easeOut' }}
-              style={{ transformOrigin: 'left' }}
-              className="h-px bg-orange mt-10 md:mt-12 mb-6 w-16"
-            />
-
-            <motion.p
-              initial={{ opacity: 0, y: 14 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.45, delay: 0.4, ease: 'easeOut' }}
-              className="font-sans text-navy/45 text-sm leading-relaxed mb-8 max-w-[280px]"
-            >
-              Professional installation, 24/7 support, and 5-year warranty — backed by local expertise in Guwahati.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 14 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.45, delay: 0.5, ease: 'easeOut' }}
-              className="flex items-center gap-4 flex-wrap"
-            >
-              <a
-                href="#contact"
-                className="bg-navy text-white px-8 py-4 font-sans font-medium text-xs tracking-[4px] uppercase hover:bg-orange transition-colors duration-300"
-              >
-                Book Survey
-              </a>
-              <a
-                href="#services"
-                className="border border-navy/20 text-navy/55 px-8 py-4 font-sans font-medium text-xs tracking-[4px] uppercase hover:border-orange hover:text-orange transition-colors duration-300"
-              >
-                Our Services
-              </a>
-            </motion.div>
-          </div>
         </div>
+      </div>
 
-        {/* Right — dark surveillance visual */}
-        <div className="hidden md:block bg-navy relative overflow-hidden">
-
-          {/* Dot grid texture */}
+      {/* Service ticker */}
+      <motion.div
+        className="border-t border-[var(--color-rule)] shrink-0"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 1.6, ease: EASE_OUT }}
+      >
+        <div className="overflow-hidden py-4">
           <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage: 'radial-gradient(rgba(255,255,255,0.07) 1px, transparent 1px)',
-              backgroundSize: '26px 26px',
-            }}
-          />
-
-          {/* Concentric viewfinder squares */}
-          <div className="absolute inset-0 flex items-center justify-center" style={{ paddingBottom: '3rem' }}>
-            {[280, 215, 155, 100, 60].map((size, i) => (
-              <motion.div
-                key={size}
-                className="absolute border"
-                style={{
-                  width: size,
-                  height: size,
-                  borderColor:
-                    i === 0
-                      ? 'rgba(232,127,36,0.35)'
-                      : `rgba(255,255,255,${0.04 + i * 0.018})`,
-                }}
-                initial={{ opacity: 0, scale: 0.88 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.3 + i * 0.1, ease: 'easeOut' }}
-              />
+            className="flex whitespace-nowrap"
+            style={{ width: 'max-content', animation: 'ticker 32s linear infinite' }}
+          >
+            {[0, 1].map((copy) => (
+              <span
+                key={copy}
+                className="inline-flex items-center font-sans text-[10px] tracking-[0.2em] uppercase text-[var(--color-ink-2)]"
+              >
+                {SERVICES.map((s, j) => (
+                  <span key={j} className="inline-flex items-center">
+                    <span className="text-[var(--color-accent)] px-5" aria-hidden="true">·</span>
+                    {s}
+                  </span>
+                ))}
+                <span className="text-[var(--color-accent)] px-5" aria-hidden="true">·</span>
+              </span>
             ))}
-
-            {/* Center focal point */}
-            <motion.div
-              className="relative w-10 h-10 border-2 border-orange flex items-center justify-center"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.4, delay: 0.95 }}
-            >
-              <div className="w-3 h-3 bg-orange" />
-            </motion.div>
-          </div>
-
-          {/* Corner brackets */}
-          <div className="absolute top-6 left-6 w-6 h-6 border-t-2 border-l-2 border-orange/40" />
-          <div className="absolute top-6 right-6 w-6 h-6 border-t-2 border-r-2 border-orange/40" />
-          <div className="absolute bottom-[6.5rem] left-6 w-6 h-6 border-b-2 border-l-2 border-orange/40" />
-          <div className="absolute bottom-[6.5rem] right-6 w-6 h-6 border-b-2 border-r-2 border-orange/40" />
-
-          {/* Bottom-right diagonal accent */}
-          <div
-            className="absolute bottom-0 right-0 bg-orange/15"
-            style={{ width: 110, height: 110, clipPath: 'polygon(100% 0, 100% 100%, 0% 100%)' }}
-          />
-
-          {/* Caption */}
-          <div className="absolute bottom-7 left-8 right-8">
-            <div className="h-px bg-white/10 mb-4" />
-            <p className="font-sans text-white/20 text-[9px] tracking-[4px] uppercase">
-              Securing Guwahati — Est. 2017
-            </p>
           </div>
         </div>
-      </div>
-
-      {/* Stats strip */}
-      <div className="border-t-2 border-navy flex overflow-x-auto shrink-0">
-        {STATS.map((stat) => (
-          <StatItem key={stat.label} {...stat} />
-        ))}
-      </div>
+      </motion.div>
     </section>
   )
 }
