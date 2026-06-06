@@ -213,33 +213,56 @@ export default function Hero() {
       </div>
 
       {/* Service ticker */}
-      <motion.div
-        className="border-t border-[var(--color-rule)] shrink-0"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.6, delay: 1.6, ease: EASE_OUT }}
-      >
+      <div className="border-t border-[var(--color-rule)] shrink-0">
         <div className="overflow-hidden py-4">
-          <div
-            className="flex"
-            style={{ animation: 'ticker 28s linear infinite', willChange: 'transform' }}
-          >
-            {[0, 1].map((copy) => (
-              <div
-                key={copy}
-                className="flex shrink-0 items-center font-sans text-[10px] tracking-[0.2em] uppercase text-[var(--color-ink-2)] whitespace-nowrap"
-              >
-                {SERVICES.map((s, j) => (
-                  <span key={j} className="flex items-center">
-                    <span className="text-[var(--color-accent)] px-6" aria-hidden="true">·</span>
-                    {s}
-                  </span>
-                ))}
-              </div>
-            ))}
+          <style dangerouslySetInnerHTML={{
+            __html: `
+              @keyframes scrollMarquee {
+                from { transform: translateX(0); }
+                to { transform: translateX(-50%); }
+              }
+              .ticker-scroll {
+                animation: scrollMarquee 25s linear infinite !important;
+                animation-iteration-count: infinite !important;
+              }
+            `
+          }} />
+          <div className="flex ticker-scroll">
+            <div className="flex shrink-0">
+              {SERVICES.map((s, j) => (
+                <span key={`a-${j}`} className="flex items-center font-sans text-[10px] tracking-[0.2em] uppercase text-[var(--color-ink-2)] whitespace-nowrap">
+                  <span className="text-[var(--color-accent)] px-6" aria-hidden="true">·</span>
+                  {s}
+                </span>
+              ))}
+            </div>
+            <div className="flex shrink-0" aria-hidden="true">
+              {SERVICES.map((s, j) => (
+                <span key={`b-${j}`} className="flex items-center font-sans text-[10px] tracking-[0.2em] uppercase text-[var(--color-ink-2)] whitespace-nowrap">
+                  <span className="text-[var(--color-accent)] px-6" aria-hidden="true">·</span>
+                  {s}
+                </span>
+              ))}
+            </div>
+            <div className="flex shrink-0" aria-hidden="true">
+              {SERVICES.map((s, j) => (
+                <span key={`c-${j}`} className="flex items-center font-sans text-[10px] tracking-[0.2em] uppercase text-[var(--color-ink-2)] whitespace-nowrap">
+                  <span className="text-[var(--color-accent)] px-6" aria-hidden="true">·</span>
+                  {s}
+                </span>
+              ))}
+            </div>
+            <div className="flex shrink-0" aria-hidden="true">
+              {SERVICES.map((s, j) => (
+                <span key={`d-${j}`} className="flex items-center font-sans text-[10px] tracking-[0.2em] uppercase text-[var(--color-ink-2)] whitespace-nowrap">
+                  <span className="text-[var(--color-accent)] px-6" aria-hidden="true">·</span>
+                  {s}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
-      </motion.div>
+      </div>
     </section>
   )
 }
