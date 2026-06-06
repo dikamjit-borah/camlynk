@@ -4,9 +4,6 @@ import ServicesOverview from '@/components/ServicesOverview'
 import CoreSecurity from '@/components/CoreSecurity'
 import SmartHome from '@/components/SmartHome'
 import WhyUs from '@/components/WhyUs'
-import HowItWorks from '@/components/HowItWorks'
-import Commercial from '@/components/Commercial'
-import CTABanner from '@/components/CTABanner'
 import FAQ from '@/components/FAQ'
 import ContactSection from '@/components/ContactSection'
 import Footer from '@/components/Footer'
@@ -21,10 +18,7 @@ export default function Home() {
       <CoreSecurity />
       <SmartHome />
       <WhyUs />
-      <HowItWorks />
-      <Commercial />
-      <CTABanner />
-      <FAQ />
+<FAQ />
       <ContactSection />
       <Footer />
       <FloatingWhatsApp />

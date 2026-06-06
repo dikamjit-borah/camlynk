@@ -26,14 +26,6 @@ export default function Footer() {
           <span className="text-ink">lynk</span>
         </a>
 
-        {/* Closing statement */}
-        <p
-          className="font-serif text-ink leading-[0.9] mb-12"
-          style={{ fontSize: 'clamp(2.5rem, 6vw, 5rem)', letterSpacing: '-0.02em', maxWidth: '16ch', fontStyle: 'normal' }}
-        >
-          Security, precisely installed.
-        </p>
-
         {/* Actions */}
         <div className="flex flex-wrap gap-4">
           <a
