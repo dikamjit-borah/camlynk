@@ -57,7 +57,6 @@ const jsonLd = {
   url: BASE_URL,
   telephone: '+91-98765-43210',
   priceRange: '$$',
-  image: `${BASE_URL}/og-image.jpg`,
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Guwahati',
@@ -73,12 +72,6 @@ const jsonLd = {
   areaServed: [
     { '@type': 'City', name: 'Guwahati' },
   ],
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '5',
-    reviewCount: '50',
-    bestRating: '5',
-  },
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     name: 'Security & Smart Home Services',

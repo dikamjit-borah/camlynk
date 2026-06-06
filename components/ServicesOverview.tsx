@@ -93,7 +93,7 @@ export default function ServicesOverview() {
             color: 'var(--color-paper)',
           }}
         >
-          What we<br />install
+          Security & smart home<br />installation, Guwahati
         </h2>
         <div className="flex flex-col gap-3 md:text-right md:max-w-xs">
           <p

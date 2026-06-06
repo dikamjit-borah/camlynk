@@ -162,7 +162,7 @@ export default function FAQ() {
             className="font-sans"
             style={{ fontSize: '0.55rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--color-paper)', opacity: 0.28 }}
           >
-            Est. 2025 · 500+ installations · Guwahati, Assam
+            Est. 2025 · 20+ installations · Guwahati, Assam
           </p>
         </div>
 

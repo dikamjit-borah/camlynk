@@ -3,11 +3,11 @@ export const WHATSAPP_NUMBER = '919876543210'
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`
 
 export const STATS = [
-  { value: 500, suffix: '+', label: 'Homes Secured' },
+  { value: 20, suffix: '+', label: 'Homes Secured' },
   { value: 5,   suffix: '★', label: 'Google Rating' },
   { value: 24,  suffix: '/7', label: 'Support' },
   { value: 5,   suffix: 'yr', label: 'Warranty' },
-  { value: 8,   suffix: 'yr', label: 'Experience' },
+  { value: 2,   suffix: 'yr', label: 'Experience' },
 ]
 
 export const CORE_SERVICES = [

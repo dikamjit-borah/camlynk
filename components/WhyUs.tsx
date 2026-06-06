@@ -68,7 +68,7 @@ export default function WhyUs() {
           className="font-sans text-sm leading-relaxed md:max-w-xs md:text-right md:mb-2 shrink-0"
           style={{ color: 'var(--color-ink-3)' }}
         >
-          500+ installations across Guwahati — every one backed by a free survey, same-day fitting, and a 5-year warranty with no small print.
+          20+ installations across Guwahati — every one backed by a free survey, same-day fitting, and a 5-year warranty with no small print.
         </motion.p>
       </div>
 

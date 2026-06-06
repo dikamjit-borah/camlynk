@@ -97,9 +97,9 @@ export default function SmartHome() {
                 color: 'var(--color-paper)',
               }}
             >
-              Your home,<br />
-              connected<br />
-              &amp; controlled.
+              Smart home<br />
+              automation,<br />
+              Guwahati.
             </h2>
           </div>
 
@@ -109,7 +109,7 @@ export default function SmartHome() {
               className="font-sans text-sm leading-relaxed"
               style={{ color: 'var(--color-paper)', opacity: 0.55 }}
             >
-              Control, automate, and monitor everything from your phone — anywhere in the world. Smart home systems that are genuinely simple to live with.
+              Control, automate, and monitor everything from your phone — anywhere in the world. Smart home installation in Guwahati, built to be simple to live with from day one.
             </p>
 
             {/* 2×2 stat grid */}

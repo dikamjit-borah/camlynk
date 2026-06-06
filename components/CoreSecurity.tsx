@@ -109,7 +109,7 @@ export default function CoreSecurity() {
                 color: 'var(--color-ink)',
               }}
             >
-              Secure every<br />corner.
+              CCTV & security<br />installation,<br />Guwahati.
             </h2>
 
             {/* Description */}
@@ -117,7 +117,7 @@ export default function CoreSecurity() {
               className="font-sans text-sm leading-relaxed"
               style={{ color: 'var(--color-ink-3)' }}
             >
-              Professional-grade cameras, alarms, doorbells, and intercoms covering every entry point of your home or business — installed and warranted by certified technicians.
+              Professional-grade cameras, alarms, doorbells, and intercoms covering every entry point of your home or business in Guwahati — installed and warranted by certified technicians.
             </p>
 
             {/* Stats 2×2 */}

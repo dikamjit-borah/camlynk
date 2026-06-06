@@ -221,22 +221,21 @@ export default function Hero() {
       >
         <div className="overflow-hidden py-4">
           <div
-            className="flex whitespace-nowrap"
-            style={{ width: 'max-content', animation: 'ticker 32s linear infinite' }}
+            className="flex"
+            style={{ animation: 'ticker 28s linear infinite', willChange: 'transform' }}
           >
             {[0, 1].map((copy) => (
-              <span
+              <div
                 key={copy}
-                className="inline-flex items-center font-sans text-[10px] tracking-[0.2em] uppercase text-[var(--color-ink-2)]"
+                className="flex shrink-0 items-center font-sans text-[10px] tracking-[0.2em] uppercase text-[var(--color-ink-2)] whitespace-nowrap"
               >
                 {SERVICES.map((s, j) => (
-                  <span key={j} className="inline-flex items-center">
-                    <span className="text-[var(--color-accent)] px-5" aria-hidden="true">·</span>
+                  <span key={j} className="flex items-center">
+                    <span className="text-[var(--color-accent)] px-6" aria-hidden="true">·</span>
                     {s}
                   </span>
                 ))}
-                <span className="text-[var(--color-accent)] px-5" aria-hidden="true">·</span>
-              </span>
+              </div>
             ))}
           </div>
         </div>
