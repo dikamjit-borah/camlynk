@@ -18,7 +18,7 @@ export default function Home() {
       <CoreSecurity />
       <SmartHome />
       <WhyUs />
-<FAQ />
+      <FAQ />
       <ContactSection />
       <Footer />
       <FloatingWhatsApp />

@@ -204,14 +204,14 @@ export default function SmartHome() {
 
               {/* Spec cells — stacked vertically on desktop */}
               <div
-                className="flex lg:flex-col"
+                className="flex flex-wrap lg:flex-nowrap lg:flex-col"
                 style={{ gap: '1px', background: 'color-mix(in oklch, var(--color-paper) 12%, transparent)' }}
               >
                 {specs.map(({ label, value }) => (
                   <div
                     key={label}
                     className="flex flex-col gap-1 px-4 py-3 bg-[var(--color-light)] group-hover:bg-white transition-colors"
-                    style={{ transitionDuration: 'var(--dur-short)', minWidth: '7rem' }}
+                    style={{ transitionDuration: 'var(--dur-short)', minWidth: '6rem', flex: '1 1 auto' }}
                   >
                     <span
                       className="font-sans"

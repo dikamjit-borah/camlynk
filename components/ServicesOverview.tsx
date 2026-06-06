@@ -72,7 +72,7 @@ const SERVICES = [
       'Time & Attendance Reports',
       'Multi-site Management',
     ],
-    href: '#commercial',
+    href: '#contact',
   },
 ]
 

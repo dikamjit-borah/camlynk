@@ -8,6 +8,5 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'Name and phone are required' }, { status: 400 })
   }
 
-  console.log('Contact submission:', body)
   return NextResponse.json({ success: true }, { status: 200 })
 }

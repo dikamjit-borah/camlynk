@@ -37,7 +37,7 @@ export default function Hero() {
   return (
     <section
       className="relative bg-navy flex flex-col overflow-hidden"
-      style={{ height: 'calc(100vh - 5.25rem)' }}
+      style={{ height: 'calc(100dvh - 5.25rem)' }}
     >
       {/* Dot grid */}
       <div

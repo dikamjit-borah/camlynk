@@ -4,8 +4,6 @@ import { useState } from 'react'
 import { PHONE, WHATSAPP_URL } from '@/lib/constants'
 import { Phone, MapPin } from 'lucide-react'
 
-const EASE_OUT = [0.16, 1, 0.3, 1] as const
-
 const SERVICE_OPTIONS = [
   'CCTV Installation',
   'Burglar Alarms',
@@ -212,7 +210,7 @@ export default function ContactSection() {
               <button
                 type="submit"
                 disabled={status === 'sending'}
-                className="font-sans uppercase w-full py-4 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+                className="font-sans uppercase self-start px-10 py-4 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
                 style={{
                   fontSize: '0.625rem',
                   letterSpacing: '0.25em',
