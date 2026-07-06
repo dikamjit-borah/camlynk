@@ -197,15 +197,39 @@ export default function ServicesOverview() {
 
                 {/* 2x2 spec data grid */}
                 <div className="grid grid-cols-2 gap-x-8">
-                  {specs.map(({ label, value }, idx) => (
+                  {specs.slice(0, 2).map(({ label, value }) => (
                     <div
                       key={label}
-                      className="flex flex-col gap-2 py-5 transition-colors"
-                      style={{
-                        transitionDuration: 'var(--dur-short)',
-                        transitionTimingFunction: 'var(--ease-out)',
-                        ...(idx < 2 ? { borderBottom: '1px solid color-mix(in oklch, var(--color-paper) 14%, transparent)' } : {}),
-                      }}
+                      className="flex flex-col gap-2 py-5"
+                    >
+                      <span
+                        className="font-sans block"
+                        style={{
+                          fontSize: '0.55rem',
+                          letterSpacing: '0.28em',
+                          textTransform: 'uppercase',
+                          color: 'var(--color-paper)',
+                          opacity: 0.36,
+                        }}
+                      >
+                        {label}
+                      </span>
+                      <span
+                        className="font-sans font-medium"
+                        style={{ fontSize: '0.875rem', lineHeight: '1.3', color: 'var(--color-paper)' }}
+                      >
+                        {value}
+                      </span>
+                    </div>
+                  ))}
+                  <div
+                    className="col-span-2"
+                    style={{ borderBottom: '1px solid color-mix(in oklch, var(--color-paper) 14%, transparent)' }}
+                  />
+                  {specs.slice(2).map(({ label, value }) => (
+                    <div
+                      key={label}
+                      className="flex flex-col gap-2 py-5"
                     >
                       <span
                         className="font-sans block"

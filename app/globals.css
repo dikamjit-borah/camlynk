@@ -139,6 +139,7 @@
 
   .animate-vignette-pulse {
     animation: vignettePulse 8s ease-in-out infinite alternate;
+    animation-fill-mode: forwards;
   }
 }
 
