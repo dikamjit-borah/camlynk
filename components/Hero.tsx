@@ -42,7 +42,7 @@ export default function Hero() {
       {/* Dot grid */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 pointer-events-none"
+        className="absolute inset-0 pointer-events-none animate-dot-drift"
         style={{
           backgroundImage: 'radial-gradient(circle, var(--color-rule) 1px, transparent 1px)',
           backgroundSize: '44px 44px',
@@ -53,10 +53,9 @@ export default function Hero() {
       {/* Vignette — centred focal point */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 pointer-events-none"
+        className="absolute inset-0 pointer-events-none animate-vignette-pulse"
         style={{
           background: 'radial-gradient(ellipse at 50% 48%, transparent 22%, var(--color-paper) 86%)',
-          opacity: 0.75,
         }}
       />
 
