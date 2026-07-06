@@ -8,13 +8,16 @@ export default function Navbar() {
     >
       <nav className="px-6 md:px-12 lg:px-16 xl:px-24 py-6 flex items-center justify-between">
 
-        {/* Wordmark — N9 edge-aligned · serif roman */}
+        {/* Wordmark — N9 edge-aligned · Fraunces italic accent */}
         <a
           href="/"
-          className="font-serif font-semibold leading-none tracking-tight text-ink"
-          style={{ fontSize: 'clamp(1.1rem, 1.6vw, 1.3rem)' }}
+          className="font-semibold leading-none tracking-tight text-ink"
+          style={{
+            fontFamily: 'var(--font-fraunces), Georgia, serif',
+            fontSize: 'clamp(1.1rem, 1.6vw, 1.3rem)',
+          }}
         >
-          <span className="text-orange">Cam</span>
+          <span className="text-orange" style={{ fontStyle: 'italic' }}>Cam</span>
           <span className="text-ink">lynk</span>
         </a>
 
