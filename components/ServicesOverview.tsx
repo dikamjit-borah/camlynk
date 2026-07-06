@@ -196,18 +196,16 @@ export default function ServicesOverview() {
               <div className="flex flex-col gap-8">
 
                 {/* 2x2 spec data grid */}
-                <div
-                  className="grid grid-cols-2"
-                  style={{
-                    gap: '1px',
-                    background: 'color-mix(in oklch, var(--color-paper) 14%, transparent)',
-                  }}
-                >
-                  {specs.map(({ label, value }) => (
+                <div className="grid grid-cols-2 gap-x-8">
+                  {specs.map(({ label, value }, idx) => (
                     <div
                       key={label}
-                      className="flex flex-col gap-2 p-5 bg-[var(--color-light)] group-hover:bg-white transition-colors"
-                      style={{ transitionDuration: 'var(--dur-short)', transitionTimingFunction: 'var(--ease-out)' }}
+                      className="flex flex-col gap-2 py-5 transition-colors"
+                      style={{
+                        transitionDuration: 'var(--dur-short)',
+                        transitionTimingFunction: 'var(--ease-out)',
+                        ...(idx < 2 ? { borderBottom: '1px solid color-mix(in oklch, var(--color-paper) 14%, transparent)' } : {}),
+                      }}
                     >
                       <span
                         className="font-sans block"
